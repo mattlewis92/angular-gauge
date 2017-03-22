@@ -1,0 +1,13 @@
+{
+  "generator-angular-library": {
+    "githubUsername": "mattlewis92",
+    "githubRepoName": "angular-svg-gauge",
+    "npmModuleName": "angular-svg-gauge",
+    "moduleGlobal": "angularSvgGauge",
+    "ngModuleName": "SVGGaugeModule",
+    "selectorPrefix": "mwl",
+    "projectTitle": "angular svg gauge",
+    "projectDescription": "A tiny angular 2.0+ wrapper for https://github.com/naikus/svg-gauge",
+    "authorName": "Matt Lewis"
+  }
+}
