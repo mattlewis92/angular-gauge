@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { SvgGaugeModule } from '../src';
+import { GaugeModule } from '../src';
 import { DemoComponent } from './demo.component';
 
 @NgModule({
   declarations: [DemoComponent],
-  imports: [BrowserModule, SvgGaugeModule.forRoot()],
+  imports: [BrowserModule, GaugeModule],
   bootstrap: [DemoComponent]
 })
 export class DemoModule {}

@@ -6,14 +6,14 @@ const pkg = require('./package.json');
 
 export default {
   entry: {
-    'angular-svg-gauge.umd': path.join(__dirname, 'src', 'index.ts'),
-    'angular-svg-gauge.umd.min': path.join(__dirname, 'src', 'index.ts'),
+    'angular-gauge.umd': path.join(__dirname, 'src', 'index.ts'),
+    'angular-gauge.umd.min': path.join(__dirname, 'src', 'index.ts'),
   },
   output: {
     path: path.join(__dirname, 'dist', 'bundles'),
     filename: '[name].js',
     libraryTarget: 'umd',
-    library: 'angularSvgGauge'
+    library: 'angularGauge'
   },
   externals: [
     angularExternals(),

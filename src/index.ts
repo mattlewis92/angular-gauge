@@ -1,1 +1,1 @@
-export * from './svg-gauge.module';
+export * from './gauge.module';
