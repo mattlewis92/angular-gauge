@@ -37,7 +37,7 @@ import { GaugeModule } from 'angular-gauge';
 
 @NgModule({
   imports: [
-    GaugeModule
+    GaugeModule.forRoot()
   ]
 })
 export class MyModule {}
