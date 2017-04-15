@@ -1,8 +1,8 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
-const angularExternals = require('webpack-angular-externals');
-const rxjsExternals = require('webpack-rxjs-externals');
-const pkg = require('./package.json');
+import * as angularExternals from 'webpack-angular-externals';
+import * as rxjsExternals from 'webpack-rxjs-externals';
+const pkg: any = require('./package.json');
 
 export default {
   entry: {
@@ -41,7 +41,7 @@ export default {
       sourceMap: true
     }),
     new webpack.ContextReplacementPlugin(
-      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      /angular(\\|\/)core(\\|\/)@angular/,
       path.join(__dirname, 'src')
     ),
     new webpack.BannerPlugin({

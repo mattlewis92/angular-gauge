@@ -58,7 +58,7 @@ export default config => {
           }
         }),
         new webpack.ContextReplacementPlugin(
-          /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+          /angular(\\|\/)core(\\|\/)@angular/,
           path.join(__dirname, 'src')
         ),
         ...(config.singleRun ? [new webpack.NoEmitOnErrorsPlugin()] : [])
@@ -92,6 +92,11 @@ export default config => {
     phantomjsLauncher: {
       // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
       exitOnResourceError: true
+    },
+
+    browserConsoleLogOptions: {
+      terminal: true,
+      level: 'log'
     }
 
   });
