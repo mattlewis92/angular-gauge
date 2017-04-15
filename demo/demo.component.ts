@@ -24,7 +24,7 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
         [dialEndAngle]="0"
         [value]="gaugeValues[2]"
         [animated]="true"
-        [animationDuration]="2">>
+        [animationDuration]="2">
       </mwl-gauge>
 
       <mwl-gauge
@@ -32,7 +32,7 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
         [max]="100"
         [value]="gaugeValues[3]"
         [animated]="true"
-        [animationDuration]="1.5">>
+        [animationDuration]="1.5">
       </mwl-gauge>
 
       <mwl-gauge
@@ -42,7 +42,7 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
         [dialEndAngle]="-90"
         [value]="gaugeValues[4]"
         [animated]="true"
-        [animationDuration]="2">>
+        [animationDuration]="2">
       </mwl-gauge>
 
       <mwl-gauge
@@ -52,7 +52,7 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
         [dialEndAngle]="-180"
         [value]="gaugeValues[5]"
         [animated]="true"
-        [animationDuration]="1">>
+        [animationDuration]="1">
       </mwl-gauge>
 
       <mwl-gauge
@@ -64,7 +64,7 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
         [showValue]="false"
         [value]="gaugeValues[6]"
         [animated]="true"
-        [animationDuration]="1">>
+        [animationDuration]="1">
       </mwl-gauge>
       
     </div>
