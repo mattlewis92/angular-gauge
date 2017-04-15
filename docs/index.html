@@ -85,11 +85,30 @@
                     </li>
             
             
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-classes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="classes/GaugeDefaults.html" >GaugeDefaults</a>
+                                </li>
+                        </ul>
+                    </li>
             
             
             
             
             
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
             
             
                     <li class="divider"></li>
@@ -174,11 +193,30 @@
                            </li>
                    
                    
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#classes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="classes/GaugeDefaults.html" >GaugeDefaults</a>
+                                       </li>
+                               </ul>
+                           </li>
                    
                    
                    
                    
                    
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
                    
                    
                            <li class="divider"></li>
@@ -207,11 +245,11 @@
 <li><a href="#license">License</a></li>
 </ul>
 <h2 id="about">About</h2>
-<p>A tiny angular 2.0+ wrapper for <a href="https://github.com/naikus/svg-gauge">https://github.com/naikus/svg-gauge</a></p>
+<p>A tiny angular 4.0+ wrapper for <a href="https://github.com/naikus/svg-gauge">https://github.com/naikus/svg-gauge</a></p>
 <h2 id="installation">Installation</h2>
 <p>Install through npm:</p>
 <pre><code class="hljs undefined">npm install --save angular-gauge</code></pre><p>Then include in your apps module:</p>
-<pre><code class="hljs typescript"><span class="hljs-keyword">import</span> { Component, NgModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;<br><span class="hljs-keyword">import</span> { GaugeModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'angular-gauge'</span>;<br><br><span class="hljs-meta">@NgModule</span>({<br>  imports: [<br>    GaugeModule<br>  ]<br>})<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> MyModule {}</code></pre><p>By default no styling is included with the gauge so you need to define some global styles:</p>
+<pre><code class="hljs typescript"><span class="hljs-keyword">import</span> { Component, NgModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;<br><span class="hljs-keyword">import</span> { GaugeModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'angular-gauge'</span>;<br><br><span class="hljs-meta">@NgModule</span>({<br>  imports: [<br>    GaugeModule.forRoot()<br>  ]<br>})<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> MyModule {}</code></pre><p>By default no styling is included with the gauge so you need to define some global styles:</p>
 <pre><code class="hljs css"><span class="hljs-selector-tag">mwl-gauge</span> {<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">150px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">150px</span>;<br>  <span class="hljs-attribute">display</span>: block;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;<br>}<br><span class="hljs-selector-tag">mwl-gauge</span> &gt; <span class="hljs-selector-class">.gauge</span> &gt; <span class="hljs-selector-class">.dial</span> {<br>  <span class="hljs-attribute">stroke</span>: <span class="hljs-number">#eee</span>;<br>  <span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">20</span>;<br>  <span class="hljs-attribute">fill</span>: <span class="hljs-built_in">rgba</span>(0,0,0,0);<br>}<br><span class="hljs-selector-tag">mwl-gauge</span> &gt; <span class="hljs-selector-class">.gauge</span> &gt; <span class="hljs-selector-class">.value</span> {<br>  <span class="hljs-attribute">stroke</span>: <span class="hljs-built_in">rgb</span>(47, 227, 255);<br>  <span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">20</span>;<br>  <span class="hljs-attribute">fill</span>: <span class="hljs-built_in">rgba</span>(0,0,0,0);<br>}<br><span class="hljs-selector-tag">mwl-gauge</span> &gt; <span class="hljs-selector-class">.gauge</span> &gt; <span class="hljs-selector-class">.value-text</span> {<br>  <span class="hljs-attribute">fill</span>: <span class="hljs-built_in">rgb</span>(47, 227, 255);<br>  <span class="hljs-attribute">font-family</span>: sans-serif;<br>  <span class="hljs-attribute">font-weight</span>: bold;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">10em</span>;<br>}</code></pre><p>Finally use in one of your apps components:</p>
 <pre><code class="hljs typescript"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;<br><br><span class="hljs-meta">@Component</span>({<br>  template: <span class="hljs-string">`<br>    &lt;mwl-gauge<br>      [max]="100"<br>      [dialStartAngle]="-90"<br>      [dialEndAngle]="-90.001"<br>      [value]="50"<br>      [animated]="true"<br>      [animationDuration]="1"&gt;<br>    &lt;/mwl-gauge&gt;<br>  `</span><br>})<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> MyComponent {}</code></pre><p>You may also find it useful to view the <a href="https://github.com/mattlewis92/angular-gauge/blob/master/demo/demo.component.ts">demo source</a>.</p>
 <p>This lib is just a tiny wrapper over the excellent <a href="https://github.com/naikus/svg-gauge">svg-gauge</a> library.</p>
@@ -229,10 +267,7 @@
 <h3 id="testing">Testing</h3>
 <p>Run <code>npm test</code> to run tests once or <code>npm run test:watch</code> to continually run tests.</p>
 <h3 id="release">Release</h3>
-<ul>
-<li>Bump the version in package.json (once the module hits 1.0 this will become automatic)<pre><code class="hljs bash">npm run release</code></pre></li>
-</ul>
-<h2 id="license">License</h2>
+<pre><code class="hljs bash">npm run release</code></pre><h2 id="license">License</h2>
 <p>MIT</p>
 
 

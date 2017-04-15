@@ -85,11 +85,30 @@
                     </li>
             
             
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-classes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/GaugeDefaults.html" >GaugeDefaults</a>
+                                </li>
+                        </ul>
+                    </li>
             
             
             
             
             
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
             
             
                     <li class="divider"></li>
@@ -174,11 +193,30 @@
                            </li>
                    
                    
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#classes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/GaugeDefaults.html" >GaugeDefaults</a>
+                                       </li>
+                               </ul>
+                           </li>
                    
                    
                    
                    
                    
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
                    
                    
                            <li class="divider"></li>
@@ -266,9 +304,6 @@
                                 <em>Type:</em>    <code>boolean</code>
 
                               </p>
-                            <p>
-                              <em>Default value: </em><code>false</code>
-                            </p>
                         </td>
                     </tr>
                 </tbody>
@@ -303,9 +338,6 @@
                                 <em>Type:</em>    <code>string</code>
 
                               </p>
-                            <p>
-                              <em>Default value: </em><code>dial</code>
-                            </p>
                         </td>
                     </tr>
                 </tbody>
@@ -323,9 +355,6 @@
                                 <em>Type:</em>    <code>number</code>
 
                               </p>
-                            <p>
-                              <em>Default value: </em><code>45</code>
-                            </p>
                         </td>
                     </tr>
                 </tbody>
@@ -343,9 +372,6 @@
                                 <em>Type:</em>    <code>number</code>
 
                               </p>
-                            <p>
-                              <em>Default value: </em><code>135</code>
-                            </p>
                         </td>
                     </tr>
                 </tbody>
@@ -363,9 +389,6 @@
                                 <em>Type:</em>    <code>string</code>
 
                               </p>
-                            <p>
-                              <em>Default value: </em><code>gauge</code>
-                            </p>
                         </td>
                     </tr>
                 </tbody>
@@ -400,9 +423,6 @@
                                 <em>Type:</em>    <code>number</code>
 
                               </p>
-                            <p>
-                              <em>Default value: </em><code>100</code>
-                            </p>
                         </td>
                     </tr>
                 </tbody>
@@ -420,9 +440,6 @@
                                 <em>Type:</em>    <code>number</code>
 
                               </p>
-                            <p>
-                              <em>Default value: </em><code>400</code>
-                            </p>
                         </td>
                     </tr>
                 </tbody>
@@ -440,9 +457,6 @@
                                 <em>Type:</em>    <code>boolean</code>
 
                               </p>
-                            <p>
-                              <em>Default value: </em><code>true</code>
-                            </p>
                         </td>
                     </tr>
                 </tbody>
@@ -477,9 +491,6 @@
                                 <em>Type:</em>    <code>string</code>
 
                               </p>
-                            <p>
-                              <em>Default value: </em><code>value</code>
-                            </p>
                         </td>
                     </tr>
                 </tbody>
@@ -497,9 +508,6 @@
                                 <em>Type:</em>    <code>string</code>
 
                               </p>
-                            <p>
-                              <em>Default value: </em><code>value-text</code>
-                            </p>
                         </td>
                     </tr>
                 </tbody>
@@ -531,7 +539,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(elm: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a>)</code>
+                            <code>constructor(elm: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a>, defaults: <a href="../classes/GaugeDefaults.html" >GaugeDefaults</a>)</code>
                         </td>
                     </tr>
     
@@ -544,32 +552,33 @@
         <div class="tab-pane fade tab-source-code" id="source">
             <pre><code class="hljs javascript">import { Component, ElementRef, Input, Output, EventEmitter, AfterViewInit, OnChanges, SimpleChanges } from &#x27;@angular/core&#x27;;
 import * as Gauge from &#x27;svg-gauge&#x27;;
+import { GaugeDefaults, GaugeOptions } from &#x27;./gauge-defaults.service&#x27;;
 
 @Component({
   selector: &#x27;mwl-gauge&#x27;,
   template: &#x27;&#x27;
 })
-export class GaugeComponent implements AfterViewInit, OnChanges {
+export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
 
   /**
    * The angle in degrees to start the dial
    */
-  @Input() dialStartAngle: number &#x3D; 135;
+  @Input() dialStartAngle: number;
 
   /**
    * The angle in degrees to end the dial. This MUST be less than dialStartAngle
    */
-  @Input() dialEndAngle: number &#x3D; 45;
+  @Input() dialEndAngle: number;
 
   /**
    * The radius of the gauge
    */
-  @Input() radius: number &#x3D; 400;
+  @Input() radius: number;
 
   /**
    * The maximum value for the gauge
    */
-  @Input() max: number &#x3D; 100;
+  @Input() max: number;
 
   /**
    * Function that returns a string label that will be rendered in the center. This function will be passed the current value
@@ -579,27 +588,27 @@ export class GaugeComponent implements AfterViewInit, OnChanges {
   /**
    * Whether to show the value at the center of the gauge
    */
-  @Input() showValue: boolean &#x3D; true;
+  @Input() showValue: boolean;
 
   /**
    * The CSS class of the gauge
    */
-  @Input() gaugeClass: string &#x3D; &#x27;gauge&#x27;;
+  @Input() gaugeClass: string;
 
   /**
    * The CSS class of the gauge&#x27;s dial
    */
-  @Input() dialClass: string &#x3D; &#x27;dial&#x27;;
+  @Input() dialClass: string;
 
   /**
    * The CSS class of the gauge&#x27;s fill (value dial)
    */
-  @Input() valueDialClass: string &#x3D; &#x27;value&#x27;;
+  @Input() valueDialClass: string;
 
   /**
    * 	The CSS class of the gauge&#x27;s text
    */
-  @Input() valueTextClass: string &#x3D; &#x27;value-text&#x27;;
+  @Input() valueTextClass: string;
 
   /**
    * The value of the gauge
@@ -609,7 +618,7 @@ export class GaugeComponent implements AfterViewInit, OnChanges {
   /**
    * Whether to animate changing the gauge
    */
-  @Input() animated: boolean &#x3D; false;
+  @Input() animated: boolean;
 
   /**
    * Animation duration in seconds
@@ -623,10 +632,11 @@ export class GaugeComponent implements AfterViewInit, OnChanges {
 
   private gauge: any;
 
-  constructor(private elm: ElementRef) {}
+  constructor(private elm: ElementRef, private defaults: GaugeDefaults) {}
 
   ngAfterViewInit(): void {
-    this.gauge &#x3D; Gauge(this.elm.nativeElement, {
+
+    const options: GaugeOptions &#x3D; {
       dialStartAngle: this.dialStartAngle,
       dialEndAngle: this.dialEndAngle,
       radius: this.radius,
@@ -638,7 +648,15 @@ export class GaugeComponent implements AfterViewInit, OnChanges {
       valueDialClass: this.valueDialClass,
       valueTextClass: this.valueTextClass,
       value: this.value
+    };
+
+    Object.keys(this.defaults).forEach(optionKey &#x3D;&gt; {
+      if (typeof options[optionKey] &#x3D;&#x3D;&#x3D; &#x27;undefined&#x27;) {
+        options[optionKey] &#x3D; this.defaults[optionKey];
+      }
     });
+
+    this.gauge &#x3D; Gauge(this.elm.nativeElement, options);
 
     this.gaugeCreated.emit({gauge: this.gauge});
 

@@ -85,11 +85,30 @@
                     </li>
             
             
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-classes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/GaugeDefaults.html" >GaugeDefaults</a>
+                                </li>
+                        </ul>
+                    </li>
             
             
             
             
             
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
             
             
                     <li class="divider"></li>
@@ -174,11 +193,30 @@
                            </li>
                    
                    
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#classes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/GaugeDefaults.html" >GaugeDefaults</a>
+                                       </li>
+                               </ul>
+                           </li>
                    
                    
                    
                    
                    
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
                    
                    
                            <li class="divider"></li>
@@ -242,8 +280,17 @@
         </div>
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre><code class="hljs javascript">import { NgModule } from &#x27;@angular/core&#x27;;
+        <pre><code class="hljs javascript">import { NgModule, InjectionToken, ModuleWithProviders } from &#x27;@angular/core&#x27;;
 import { GaugeComponent } from &#x27;./gauge.component&#x27;;
+import { GaugeDefaults, GaugeOptions } from &#x27;./gauge-defaults.service&#x27;;
+
+export const USER_DEFAULTS: InjectionToken&lt;string&gt; &#x3D; new InjectionToken(&#x27;gauge defaults&#x27;);
+
+export function defaultsFactory(userDefaults: GaugeOptions): GaugeDefaults {
+  const defaults: GaugeDefaults &#x3D; new GaugeDefaults();
+  Object.assign(defaults, userDefaults);
+  return defaults;
+}
 
 @NgModule({
   declarations: [
@@ -253,7 +300,23 @@ import { GaugeComponent } from &#x27;./gauge.component&#x27;;
     GaugeComponent
   ]
 })
-export class GaugeModule {}</code></pre>
+export class GaugeModule {
+
+  static forRoot(userDefaults: GaugeOptions &#x3D; {}): ModuleWithProviders {
+    return {
+      ngModule: GaugeModule,
+      providers: [{
+        provide: USER_DEFAULTS,
+        useValue: userDefaults
+      }, {
+        provide: GaugeDefaults,
+        useFactory: defaultsFactory,
+        deps: [USER_DEFAULTS]
+      }]
+    };
+  }
+
+}</code></pre>
     </div>
 </div>
 
