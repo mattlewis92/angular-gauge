@@ -218,9 +218,10 @@ export class DemoComponent implements OnInit, OnDestroy {
       };
     };
 
-    const INTERVAL: number = 6000;
+    const INTERVAL: number = 5000;
 
     this.interval = setInterval(updateValues, INTERVAL);
+    updateValues();
 
   }
 
