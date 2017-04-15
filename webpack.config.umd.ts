@@ -1,7 +1,7 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
-import angularExternals from 'webpack-angular-externals';
-import rxjsExternals from 'webpack-rxjs-externals';
+import * as angularExternals from 'webpack-angular-externals';
+import * as rxjsExternals from 'webpack-rxjs-externals';
 const pkg: any = require('./package.json');
 
 export default {
