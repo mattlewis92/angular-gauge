@@ -656,6 +656,12 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
       }
     });
 
+    Object.keys(options).forEach(optionKey &#x3D;&gt; {
+      if (typeof options[optionKey] &#x3D;&#x3D;&#x3D; &#x27;undefined&#x27;) {
+        delete options[optionKey];
+      }
+    });
+
     this.gauge &#x3D; Gauge(this.elm.nativeElement, options);
 
     this.gaugeCreated.emit({gauge: this.gauge});
