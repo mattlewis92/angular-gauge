@@ -1,6 +1,6 @@
 {
   "name": "angular-gauge",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A tiny angular 4.0+ wrapper for https://github.com/naikus/svg-gauge",
   "main": "./bundles/angular-gauge.umd.js",
   "module": "./index.js",
@@ -95,7 +95,7 @@
     "zone.js": "^0.8.4"
   },
   "peerDependencies": {
-    "@angular/core": "^4.0.0"
+    "@angular/core": "^4.0.0 || ^5.0.0"
   },
   "config": {
     "commitizen": {
@@ -103,6 +103,6 @@
     }
   },
   "dependencies": {
-    "svg-gauge": "^1.0.2"
+    "svg-gauge": "1.0.2"
   }
 }
