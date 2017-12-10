@@ -1,6 +1,6 @@
 {
   "name": "angular-gauge",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A tiny angular 4.0+ wrapper for https://github.com/naikus/svg-gauge",
   "main": "./bundles/angular-gauge.umd.js",
   "module": "./index.js",
