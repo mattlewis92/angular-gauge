@@ -53,19 +53,19 @@ mwl-gauge {
 }
 mwl-gauge > .gauge > .dial {
   stroke: #eee;
-  stroke-width: 20;
+  stroke-width: 2;
   fill: rgba(0,0,0,0);
 }
 mwl-gauge > .gauge > .value {
   stroke: rgb(47, 227, 255);
-  stroke-width: 20;
+  stroke-width: 2;
   fill: rgba(0,0,0,0);
 }
 mwl-gauge > .gauge > .value-text {
   fill: rgb(47, 227, 255);
   font-family: sans-serif;
   font-weight: bold;
-  font-size: 10em;
+  font-size: 1em;
 }
 ```
 
