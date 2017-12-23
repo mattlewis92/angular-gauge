@@ -1,4 +1,13 @@
-import { Component, ElementRef, Input, Output, EventEmitter, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  Output,
+  EventEmitter,
+  AfterViewInit,
+  OnChanges,
+  SimpleChanges
+} from '@angular/core';
 import * as Gauge from 'svg-gauge';
 import { GaugeDefaults, GaugeOptions } from './gauge-defaults.service';
 
@@ -7,7 +16,6 @@ import { GaugeDefaults, GaugeOptions } from './gauge-defaults.service';
   template: ''
 })
 export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
-
   /**
    * The angle in degrees to start the dial
    */
@@ -76,14 +84,13 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
   /**
    * Called when the gauge is created
    */
-  @Output() gaugeCreated: EventEmitter<{gauge: any}> = new EventEmitter();
+  @Output() gaugeCreated: EventEmitter<{ gauge: any }> = new EventEmitter();
 
   private gauge: any;
 
   constructor(private elm: ElementRef, private defaults: GaugeDefaults) {}
 
   ngAfterViewInit(): void {
-
     const options: GaugeOptions = {
       dialStartAngle: this.dialStartAngle,
       dialEndAngle: this.dialEndAngle,
@@ -112,7 +119,7 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
 
     this.gauge = Gauge(this.elm.nativeElement, options);
 
-    this.gaugeCreated.emit({gauge: this.gauge});
+    this.gaugeCreated.emit({ gauge: this.gauge });
 
     this.updateValue();
   }
@@ -132,5 +139,4 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
       }
     }
   }
-
 }

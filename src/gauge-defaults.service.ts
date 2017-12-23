@@ -1,5 +1,4 @@
 export interface GaugeOptions {
-
   /**
    * The angle in degrees to start the dial
    */
@@ -64,11 +63,9 @@ export interface GaugeOptions {
    * Animation duration in seconds
    */
   animationDuration?: number;
-
 }
 
 export class GaugeDefaults implements GaugeOptions {
-
   /**
    * The angle in degrees to start the dial
    */
@@ -133,5 +130,4 @@ export class GaugeDefaults implements GaugeOptions {
    * Animation duration in seconds
    */
   animationDuration: number;
-
 }
