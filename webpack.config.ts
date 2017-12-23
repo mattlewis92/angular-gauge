@@ -26,7 +26,10 @@ export default {
       loader: 'ts-loader',
       exclude: /node_modules/,
       options: {
-        transpileOnly: !IS_PROD
+        transpileOnly: !IS_PROD,
+        compilerOptions: {
+          module: 'es2015'
+        }
       }
     }]
   },

@@ -96,7 +96,7 @@ This lib is just a tiny wrapper over the excellent [svg-gauge](https://github.co
 ```
 <script src="node_modules/angular-gauge/bundles/angular-gauge.umd.js"></script>
 <script>
-    // everything is exported angularGauge namespace
+    // everything is exported `angular-gauge` namespace
 </script>
 ```
 

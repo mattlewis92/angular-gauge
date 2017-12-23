@@ -8,7 +8,7 @@ import {
   OnChanges,
   SimpleChanges
 } from '@angular/core';
-import * as Gauge from 'svg-gauge';
+import Gauge from 'svg-gauge';
 import { GaugeDefaults, GaugeOptions } from './gauge-defaults.service';
 
 @Component({
