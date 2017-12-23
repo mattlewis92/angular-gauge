@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/mattlewis92/angular-gauge/compare/v2.0.1...v3.0.0) (2017-12-23)
+
+
+### Features
+
+* upgrade svg-gauge ([f042c4e](https://github.com/mattlewis92/angular-gauge/commit/f042c4e)), closes [#9](https://github.com/mattlewis92/angular-gauge/issues/9)
+* upgrade to angular 5 ([ea9206d](https://github.com/mattlewis92/angular-gauge/commit/ea9206d))
+* use ng-packagr for building dist files ([92e6447](https://github.com/mattlewis92/angular-gauge/commit/92e6447)), closes [#10](https://github.com/mattlewis92/angular-gauge/issues/10)
+
+
+### BREAKING CHANGES
+
+* The svg-gauge package is no longer bundled with this library, system.js users will
+have to add a reference to it in their system.js config
+* The `valueTextClass` input was renamed to `valueClass` and the `radius` input was
+renamed to `dialRadius`
+* angular 5 or higher is now required to use this package
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/mattlewis92/angular-gauge/compare/v2.0.0...v2.0.1) (2017-12-10)
 

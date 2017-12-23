@@ -1,8 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import {
-  ComponentFixture,
-  TestBed
-} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { expect } from 'chai';
 import * as sinon from 'sinon';
 import { GaugeComponent } from '../src/gauge.component';
@@ -10,15 +7,15 @@ import { GaugeModule } from '../src';
 
 @Component({
   template: `
-    <mwl-gauge 
-      [value]="value" 
-      [animated]="animated" 
-      [animationDuration]="animationDuration" 
+    <mwl-gauge
+      [value]="value"
+      [animated]="animated"
+      [animationDuration]="animationDuration"
       [label]="label"
       [gaugeClass]="gaugeClass"
       [dialClass]="dialClass"
       [valueDialClass]="valueDialClass"
-      [valueTextClass]="valueTextClass"
+      [valueClass]="valueClass"
       [showValue]="showValue"
       (gaugeCreated)="gaugeCreated($event)">
     </mwl-gauge>
@@ -35,58 +32,58 @@ class TestComponent {
   gaugeClass: string;
   dialClass: string;
   valueDialClass: string;
-  valueTextClass: string;
+  valueClass: string;
 }
 
 describe('mwl-gauge component', () => {
-
   describe('without defaults set', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [
-          GaugeModule.forRoot()
-        ],
-        declarations: [
-          TestComponent
-        ]
+        imports: [GaugeModule.forRoot()],
+        declarations: [TestComponent]
       });
     });
 
     it('should create a gauge', () => {
-      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
+        TestComponent
+      );
       fixture.detectChanges();
-      expect(fixture.nativeElement.querySelector('mwl-gauge').innerHTML.trim()).to.equal(
-        '<svg viewBox="0 0 1000 1000" class="gauge"><path class="dial" fill="transparent" ' +
-        'stroke="#eee" stroke-width="20" d="M 217.157 782.843 A 400 400 0 1 1 782.843 782.843"></path>' +
-        '<text class="value-text" x="500" y="550" font-size="700%" font-family="sans-serif" ' +
-        'font-weight="bold" text-anchor="middle">25</text><path class="value" fill="transparent" ' +
-        'stroke="#666" stroke-width="25" d="M 217.157 782.843 A 400 400 0 0 1 130.448 346.927"></path></svg>'
+      expect(
+        fixture.nativeElement.querySelector('mwl-gauge').innerHTML.trim()
+      ).to.equal(
+        '<svg viewBox="0 0 100 100" class="gauge"><path class="dial" fill="none" stroke="#eee" stroke-width="2" d="M 21.716 78.284 A 40 40 0 1 1 78.284 78.284"></path><text x="50" y="50" fill="#999" class="value-text" font-size="100%" font-family="sans-serif" font-weight="normal" text-anchor="middle">25</text><path class="value" fill="none" stroke="#666" stroke-width="2.5" d="M 21.716 78.284 A 40 40 0 0 1 13.045 34.693"></path></svg>'
       );
     });
 
     it('should update the gauge value', () => {
-      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
+        TestComponent
+      );
       fixture.detectChanges();
       fixture.componentInstance.value = 50;
       fixture.detectChanges();
-      expect(fixture.nativeElement.querySelector('mwl-gauge').innerHTML.trim()).to.equal(
-        '<svg viewBox="0 0 1000 1000" class="gauge"><path class="dial" fill=' +
-        '"transparent" stroke="#eee" stroke-width="20" d="M 217.157 782.843 A ' +
-        '400 400 0 1 1 782.843 782.843"></path><text class="value-text" x="500" ' +
-        'y="550" font-size="700%" font-family="sans-serif" font-weight="bold" ' +
-        'text-anchor="middle">50</text><path class="value" fill="transparent" stroke="#666" ' +
-        'stroke-width="25" d="M 217.157 782.843 A 400 400 0 0 1 500 100"></path></svg>'
+      expect(
+        fixture.nativeElement.querySelector('mwl-gauge').innerHTML.trim()
+      ).to.equal(
+        '<svg viewBox="0 0 100 100" class="gauge"><path class="dial" fill="none" stroke="#eee" stroke-width="2" d="M 21.716 78.284 A 40 40 0 1 1 78.284 78.284"></path><text x="50" y="50" fill="#999" class="value-text" font-size="100%" font-family="sans-serif" font-weight="normal" text-anchor="middle">50</text><path class="value" fill="none" stroke="#666" stroke-width="2.5" d="M 21.716 78.284 A 40 40 0 0 1 50 10"></path></svg>'
       );
     });
 
     it('should emit the gauge when it is created', () => {
-      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
+        TestComponent
+      );
       fixture.detectChanges();
-      expect(fixture.componentInstance.gaugeCreated).to.have.been.calledWith({gauge: fixture.componentInstance.gauge['gauge']});
+      expect(fixture.componentInstance.gaugeCreated).to.have.been.calledWith({
+        gauge: fixture.componentInstance.gauge['gauge']
+      });
     });
 
     it('should animate changing the gauge value', () => {
-      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
+        TestComponent
+      );
       fixture.componentInstance.animated = true;
       fixture.componentInstance.animationDuration = 1;
       fixture.detectChanges();
@@ -98,7 +95,9 @@ describe('mwl-gauge component', () => {
     });
 
     it('should not animate changing the gauge value', () => {
-      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
+        TestComponent
+      );
       fixture.detectChanges();
       const gauge: any = fixture.componentInstance.gauge['gauge'];
       sinon.spy(gauge, 'setValue');
@@ -108,55 +107,75 @@ describe('mwl-gauge component', () => {
     });
 
     it('should allow the gauge label to be customised', () => {
-      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
+        TestComponent
+      );
       fixture.componentInstance.label = value => `Value: ${value}`;
       fixture.detectChanges();
-      expect(fixture.nativeElement.querySelector('mwl-gauge').innerHTML).to.contain('<text class="value-text" x="500" ' +
-        'y="550" font-size="700%" font-family="sans-serif" font-weight="bold" ' +
-        'text-anchor="middle">Value: 25</text>');
+      expect(
+        fixture.nativeElement.querySelector('mwl-gauge').innerHTML
+      ).to.contain('>Value: 25</text>');
     });
 
     it('should hide the gauge value', () => {
-      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
+        TestComponent
+      );
       fixture.componentInstance.showValue = false;
       fixture.detectChanges();
-      expect(fixture.nativeElement.querySelector('mwl-gauge').innerHTML).to.contain('<text class="value-text" x="500" ' +
-        'y="550" font-size="700%" font-family="sans-serif" font-weight="bold" text-anchor="middle"></text>');
+      expect(
+        fixture.nativeElement.querySelector('mwl-gauge').innerHTML
+      ).to.contain('></text>');
     });
 
     it('should allow the gauge class to be customised', () => {
-      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
+        TestComponent
+      );
       fixture.componentInstance.gaugeClass = 'gauge-class';
       fixture.detectChanges();
-      expect(fixture.nativeElement.querySelector('mwl-gauge').innerHTML).to.contain('<svg viewBox="0 0 1000 1000" class="gauge-class">');
+      expect(
+        fixture.nativeElement.querySelector('mwl-gauge').innerHTML
+      ).to.contain('<svg viewBox="0 0 100 100" class="gauge-class">');
     });
 
     it('should allow the dial class to be customised', () => {
-      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
+        TestComponent
+      );
       fixture.componentInstance.dialClass = 'dial-class';
       fixture.detectChanges();
-      expect(fixture.nativeElement.querySelector('mwl-gauge').innerHTML).to.contain('<path class="dial-class" fill="transparent" ' +
-        'stroke="#eee" stroke-width="20" d="M 217.157 782.843 A 400 400 0 1 1 782.843 782.843"></path>');
+      expect(
+        fixture.nativeElement.querySelector('mwl-gauge').innerHTML
+      ).to.contain('<path class="dial-class"');
     });
 
     it('should allow the value dial class to be customised', () => {
-      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
+        TestComponent
+      );
       fixture.componentInstance.valueDialClass = 'value-class';
       fixture.detectChanges();
-      expect(fixture.nativeElement.querySelector('mwl-gauge').innerHTML).to.contain('<path class="value-class" ' +
-        'fill="transparent" stroke="#666" stroke-width="25" d="M 217.157 782.843 A 400 400 0 0 1 130.448 346.927"></path>');
+      expect(
+        fixture.nativeElement.querySelector('mwl-gauge').innerHTML
+      ).to.contain('<path class="value-class" ');
     });
 
     it('should allow the value text class to be customised', () => {
-      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
-      fixture.componentInstance.valueTextClass = 'value-text-class';
+      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
+        TestComponent
+      );
+      fixture.componentInstance.valueClass = 'value-text-class';
       fixture.detectChanges();
-      expect(fixture.nativeElement.querySelector('mwl-gauge').innerHTML).to.contain('<text class="value-text-class"' +
-        ' x="500" y="550" font-size="700%" font-family="sans-serif" font-weight="bold" text-anchor="middle">25</text>');
+      expect(
+        fixture.nativeElement.querySelector('mwl-gauge').innerHTML
+      ).to.contain('class="value-text-class"');
     });
 
     it('should only create the gauge once', () => {
-      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
+        TestComponent
+      );
       fixture.detectChanges();
       const gauge: any = fixture.componentInstance.gauge['gauge'];
       fixture.componentInstance.showValue = false;
@@ -166,7 +185,6 @@ describe('mwl-gauge component', () => {
   });
 
   describe('with defaults set', () => {
-
     beforeEach(() => {
       TestBed.configureTestingModule({
         imports: [
@@ -174,20 +192,18 @@ describe('mwl-gauge component', () => {
             label: value => `Value: ${value}`
           })
         ],
-        declarations: [
-          TestComponent
-        ]
+        declarations: [TestComponent]
       });
     });
 
     it('should allow defaults to be configured globally', () => {
-      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(TestComponent);
+      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
+        TestComponent
+      );
       fixture.detectChanges();
-      expect(fixture.nativeElement.querySelector('mwl-gauge').innerHTML).to.contain('<text class="value-text" x="500" ' +
-        'y="550" font-size="700%" font-family="sans-serif" font-weight="bold" ' +
-        'text-anchor="middle">Value: 25</text>');
+      expect(
+        fixture.nativeElement.querySelector('mwl-gauge').innerHTML
+      ).to.contain('Value: 25</text>');
     });
-
   });
-
 });

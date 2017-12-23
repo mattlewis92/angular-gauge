@@ -1,5 +1,14 @@
-import { Component, ElementRef, Input, Output, EventEmitter, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';
-import * as Gauge from 'svg-gauge';
+import {
+  Component,
+  ElementRef,
+  Input,
+  Output,
+  EventEmitter,
+  AfterViewInit,
+  OnChanges,
+  SimpleChanges
+} from '@angular/core';
+import Gauge from 'svg-gauge';
 import { GaugeDefaults, GaugeOptions } from './gauge-defaults.service';
 
 @Component({
@@ -7,7 +16,6 @@ import { GaugeDefaults, GaugeOptions } from './gauge-defaults.service';
   template: ''
 })
 export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
-
   /**
    * The angle in degrees to start the dial
    */
@@ -21,7 +29,12 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
   /**
    * The radius of the gauge
    */
-  @Input() radius: number;
+  @Input() dialRadius: number;
+
+  /**
+   * The minimum value for the gauge
+   */
+  @Input() min: number;
 
   /**
    * The maximum value for the gauge
@@ -56,7 +69,7 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
   /**
    * 	The CSS class of the gauge's text
    */
-  @Input() valueTextClass: string;
+  @Input() valueClass: string;
 
   /**
    * The value of the gauge
@@ -76,25 +89,25 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
   /**
    * Called when the gauge is created
    */
-  @Output() gaugeCreated: EventEmitter<{gauge: any}> = new EventEmitter();
+  @Output() gaugeCreated: EventEmitter<{ gauge: any }> = new EventEmitter();
 
   private gauge: any;
 
   constructor(private elm: ElementRef, private defaults: GaugeDefaults) {}
 
   ngAfterViewInit(): void {
-
     const options: GaugeOptions = {
       dialStartAngle: this.dialStartAngle,
       dialEndAngle: this.dialEndAngle,
-      radius: this.radius,
+      dialRadius: this.dialRadius,
+      min: this.min,
       max: this.max,
       label: this.label,
       showValue: this.showValue,
       gaugeClass: this.gaugeClass,
       dialClass: this.dialClass,
       valueDialClass: this.valueDialClass,
-      valueTextClass: this.valueTextClass,
+      valueClass: this.valueClass,
       value: this.value
     };
 
@@ -112,7 +125,7 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
 
     this.gauge = Gauge(this.elm.nativeElement, options);
 
-    this.gaugeCreated.emit({gauge: this.gauge});
+    this.gaugeCreated.emit({ gauge: this.gauge });
 
     this.updateValue();
   }
@@ -132,5 +145,4 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
       }
     }
   }
-
 }

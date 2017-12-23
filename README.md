@@ -20,7 +20,7 @@ https://mattlewis92.github.io/angular-gauge/
 
 ## About
 
-A tiny angular 4.0+ wrapper for https://github.com/naikus/svg-gauge
+A tiny angular 5.0+ wrapper for https://github.com/naikus/svg-gauge
 
 ## Installation
 
@@ -53,19 +53,19 @@ mwl-gauge {
 }
 mwl-gauge > .gauge > .dial {
   stroke: #eee;
-  stroke-width: 20;
+  stroke-width: 2;
   fill: rgba(0,0,0,0);
 }
 mwl-gauge > .gauge > .value {
   stroke: rgb(47, 227, 255);
-  stroke-width: 20;
+  stroke-width: 2;
   fill: rgba(0,0,0,0);
 }
 mwl-gauge > .gauge > .value-text {
   fill: rgb(47, 227, 255);
   font-family: sans-serif;
   font-weight: bold;
-  font-size: 10em;
+  font-size: 1em;
 }
 ```
 
@@ -96,7 +96,7 @@ This lib is just a tiny wrapper over the excellent [svg-gauge](https://github.co
 ```
 <script src="node_modules/angular-gauge/bundles/angular-gauge.umd.js"></script>
 <script>
-    // everything is exported angularGauge namespace
+    // everything is exported `angular-gauge` namespace
 </script>
 ```
 
