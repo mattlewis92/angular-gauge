@@ -115,6 +115,6 @@
     }
   },
   "dependencies": {
-    "svg-gauge": "1.0.2"
+    "svg-gauge": "1.0.4"
   }
 }

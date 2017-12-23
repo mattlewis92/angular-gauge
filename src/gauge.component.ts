@@ -29,7 +29,12 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
   /**
    * The radius of the gauge
    */
-  @Input() radius: number;
+  @Input() dialRadius: number;
+
+  /**
+   * The minimum value for the gauge
+   */
+  @Input() min: number;
 
   /**
    * The maximum value for the gauge
@@ -64,7 +69,7 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
   /**
    * 	The CSS class of the gauge's text
    */
-  @Input() valueTextClass: string;
+  @Input() valueClass: string;
 
   /**
    * The value of the gauge
@@ -94,14 +99,15 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
     const options: GaugeOptions = {
       dialStartAngle: this.dialStartAngle,
       dialEndAngle: this.dialEndAngle,
-      radius: this.radius,
+      dialRadius: this.dialRadius,
+      min: this.min,
       max: this.max,
       label: this.label,
       showValue: this.showValue,
       gaugeClass: this.gaugeClass,
       dialClass: this.dialClass,
       valueDialClass: this.valueDialClass,
-      valueTextClass: this.valueTextClass,
+      valueClass: this.valueClass,
       value: this.value
     };
 

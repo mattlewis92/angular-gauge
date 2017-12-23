@@ -12,7 +12,12 @@ export interface GaugeOptions {
   /**
    * The radius of the gauge
    */
-  radius?: number;
+  dialRadius?: number;
+
+  /**
+   * The minumum value for the gauge
+   */
+  min?: number;
 
   /**
    * The maximum value for the gauge
@@ -47,7 +52,7 @@ export interface GaugeOptions {
   /**
    * 	The CSS class of the gauge's text
    */
-  valueTextClass?: string;
+  valueClass?: string;
 
   /**
    * The value of the gauge
@@ -79,7 +84,12 @@ export class GaugeDefaults implements GaugeOptions {
   /**
    * The radius of the gauge
    */
-  radius: number = 400;
+  dialRadius: number = 40;
+
+  /**
+   * The minimum value for the gauge
+   */
+  min: number = 0;
 
   /**
    * The maximum value for the gauge
@@ -114,7 +124,7 @@ export class GaugeDefaults implements GaugeOptions {
   /**
    * 	The CSS class of the gauge's text
    */
-  valueTextClass: string = 'value-text';
+  valueClass: string = 'value-text';
 
   /**
    * The value of the gauge

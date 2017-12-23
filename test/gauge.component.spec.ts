@@ -15,7 +15,7 @@ import { GaugeModule } from '../src';
       [gaugeClass]="gaugeClass"
       [dialClass]="dialClass"
       [valueDialClass]="valueDialClass"
-      [valueTextClass]="valueTextClass"
+      [valueClass]="valueClass"
       [showValue]="showValue"
       (gaugeCreated)="gaugeCreated($event)">
     </mwl-gauge>
@@ -32,7 +32,7 @@ class TestComponent {
   gaugeClass: string;
   dialClass: string;
   valueDialClass: string;
-  valueTextClass: string;
+  valueClass: string;
 }
 
 describe('mwl-gauge component', () => {
@@ -52,11 +52,7 @@ describe('mwl-gauge component', () => {
       expect(
         fixture.nativeElement.querySelector('mwl-gauge').innerHTML.trim()
       ).to.equal(
-        '<svg viewBox="0 0 1000 1000" class="gauge"><path class="dial" fill="transparent" ' +
-          'stroke="#eee" stroke-width="20" d="M 217.157 782.843 A 400 400 0 1 1 782.843 782.843"></path>' +
-          '<text class="value-text" x="500" y="550" font-size="700%" font-family="sans-serif" ' +
-          'font-weight="bold" text-anchor="middle">25</text><path class="value" fill="transparent" ' +
-          'stroke="#666" stroke-width="25" d="M 217.157 782.843 A 400 400 0 0 1 130.448 346.927"></path></svg>'
+        '<svg viewBox="0 0 100 100" class="gauge"><path class="dial" fill="none" stroke="#eee" stroke-width="2" d="M 21.716 78.284 A 40 40 0 1 1 78.284 78.284"></path><text x="50" y="50" fill="#999" class="value-text" font-size="100%" font-family="sans-serif" font-weight="normal" text-anchor="middle">25</text><path class="value" fill="none" stroke="#666" stroke-width="2.5" d="M 21.716 78.284 A 40 40 0 0 1 13.045 34.693"></path></svg>'
       );
     });
 
@@ -70,12 +66,7 @@ describe('mwl-gauge component', () => {
       expect(
         fixture.nativeElement.querySelector('mwl-gauge').innerHTML.trim()
       ).to.equal(
-        '<svg viewBox="0 0 1000 1000" class="gauge"><path class="dial" fill=' +
-          '"transparent" stroke="#eee" stroke-width="20" d="M 217.157 782.843 A ' +
-          '400 400 0 1 1 782.843 782.843"></path><text class="value-text" x="500" ' +
-          'y="550" font-size="700%" font-family="sans-serif" font-weight="bold" ' +
-          'text-anchor="middle">50</text><path class="value" fill="transparent" stroke="#666" ' +
-          'stroke-width="25" d="M 217.157 782.843 A 400 400 0 0 1 500 100"></path></svg>'
+        '<svg viewBox="0 0 100 100" class="gauge"><path class="dial" fill="none" stroke="#eee" stroke-width="2" d="M 21.716 78.284 A 40 40 0 1 1 78.284 78.284"></path><text x="50" y="50" fill="#999" class="value-text" font-size="100%" font-family="sans-serif" font-weight="normal" text-anchor="middle">50</text><path class="value" fill="none" stroke="#666" stroke-width="2.5" d="M 21.716 78.284 A 40 40 0 0 1 50 10"></path></svg>'
       );
     });
 
@@ -123,11 +114,7 @@ describe('mwl-gauge component', () => {
       fixture.detectChanges();
       expect(
         fixture.nativeElement.querySelector('mwl-gauge').innerHTML
-      ).to.contain(
-        '<text class="value-text" x="500" ' +
-          'y="550" font-size="700%" font-family="sans-serif" font-weight="bold" ' +
-          'text-anchor="middle">Value: 25</text>'
-      );
+      ).to.contain('>Value: 25</text>');
     });
 
     it('should hide the gauge value', () => {
@@ -138,10 +125,7 @@ describe('mwl-gauge component', () => {
       fixture.detectChanges();
       expect(
         fixture.nativeElement.querySelector('mwl-gauge').innerHTML
-      ).to.contain(
-        '<text class="value-text" x="500" ' +
-          'y="550" font-size="700%" font-family="sans-serif" font-weight="bold" text-anchor="middle"></text>'
-      );
+      ).to.contain('></text>');
     });
 
     it('should allow the gauge class to be customised', () => {
@@ -152,7 +136,7 @@ describe('mwl-gauge component', () => {
       fixture.detectChanges();
       expect(
         fixture.nativeElement.querySelector('mwl-gauge').innerHTML
-      ).to.contain('<svg viewBox="0 0 1000 1000" class="gauge-class">');
+      ).to.contain('<svg viewBox="0 0 100 100" class="gauge-class">');
     });
 
     it('should allow the dial class to be customised', () => {
@@ -163,10 +147,7 @@ describe('mwl-gauge component', () => {
       fixture.detectChanges();
       expect(
         fixture.nativeElement.querySelector('mwl-gauge').innerHTML
-      ).to.contain(
-        '<path class="dial-class" fill="transparent" ' +
-          'stroke="#eee" stroke-width="20" d="M 217.157 782.843 A 400 400 0 1 1 782.843 782.843"></path>'
-      );
+      ).to.contain('<path class="dial-class"');
     });
 
     it('should allow the value dial class to be customised', () => {
@@ -177,24 +158,18 @@ describe('mwl-gauge component', () => {
       fixture.detectChanges();
       expect(
         fixture.nativeElement.querySelector('mwl-gauge').innerHTML
-      ).to.contain(
-        '<path class="value-class" ' +
-          'fill="transparent" stroke="#666" stroke-width="25" d="M 217.157 782.843 A 400 400 0 0 1 130.448 346.927"></path>'
-      );
+      ).to.contain('<path class="value-class" ');
     });
 
     it('should allow the value text class to be customised', () => {
       const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
         TestComponent
       );
-      fixture.componentInstance.valueTextClass = 'value-text-class';
+      fixture.componentInstance.valueClass = 'value-text-class';
       fixture.detectChanges();
       expect(
         fixture.nativeElement.querySelector('mwl-gauge').innerHTML
-      ).to.contain(
-        '<text class="value-text-class"' +
-          ' x="500" y="550" font-size="700%" font-family="sans-serif" font-weight="bold" text-anchor="middle">25</text>'
-      );
+      ).to.contain('class="value-text-class"');
     });
 
     it('should only create the gauge once', () => {
@@ -228,11 +203,7 @@ describe('mwl-gauge component', () => {
       fixture.detectChanges();
       expect(
         fixture.nativeElement.querySelector('mwl-gauge').innerHTML
-      ).to.contain(
-        '<text class="value-text" x="500" ' +
-          'y="550" font-size="700%" font-family="sans-serif" font-weight="bold" ' +
-          'text-anchor="middle">Value: 25</text>'
-      );
+      ).to.contain('Value: 25</text>');
     });
   });
 });
