@@ -4,7 +4,7 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
   selector: 'mwl-demo-app',
   encapsulation: ViewEncapsulation.None,
   template: `
-    
+
     <div class="gauges-container">
 
       <mwl-gauge
@@ -66,7 +66,7 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
         [animated]="true"
         [animationDuration]="1">
       </mwl-gauge>
-      
+
     </div>
 
   `,
@@ -76,7 +76,7 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
       color: #999;
       font-family: Hevletica, sans-serif;
     }
-    
+
     .gauges-container {
       display: flex;
     }
@@ -106,7 +106,7 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
       font-weight: bold;
       font-size: 8em;
     }
-    
+
     /* ------- Alternate Style ------- */
     mwl-gauge.two {
     }
@@ -137,7 +137,7 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
     mwl-gauge.three > .gauge > .value-text {
       fill: #C9DE3C;
     }
-    
+
     /* ----- Alternate Style ----- */
     mwl-gauge.four > .gauge > .dial {
       stroke: #334455;
@@ -166,7 +166,7 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
       fill: #F8774B;
       font-size: 7em;
     }
-    
+
     /* ----- Alternate Style ----- */
     mwl-gauge.six > .gauge > .dial {
       stroke: #334455;

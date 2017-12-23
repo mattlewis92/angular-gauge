@@ -10,10 +10,10 @@ import { GaugeModule } from '../src';
 
 @Component({
   template: `
-    <mwl-gauge 
-      [value]="value" 
-      [animated]="animated" 
-      [animationDuration]="animationDuration" 
+    <mwl-gauge
+      [value]="value"
+      [animated]="animated"
+      [animationDuration]="animationDuration"
       [label]="label"
       [gaugeClass]="gaugeClass"
       [dialClass]="dialClass"

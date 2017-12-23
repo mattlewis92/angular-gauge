@@ -41,7 +41,7 @@ export default {
       sourceMap: true
     }),
     new webpack.ContextReplacementPlugin(
-      /angular(\\|\/)core(\\|\/)@angular/,
+      /angular(\\|\/)core(\\|\/)esm5/,
       path.join(__dirname, 'src')
     ),
     new webpack.BannerPlugin({

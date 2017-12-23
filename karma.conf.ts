@@ -58,7 +58,7 @@ export default config => {
           }
         }),
         new webpack.ContextReplacementPlugin(
-          /angular(\\|\/)core(\\|\/)@angular/,
+          /angular(\\|\/)core(\\|\/)esm5/,
           path.join(__dirname, 'src')
         ),
         ...(config.singleRun ? [new webpack.NoEmitOnErrorsPlugin()] : [])
