@@ -70,7 +70,8 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
     </div>
 
   `,
-  styles: [`
+  styles: [
+    `
     body {
       background-color: rgba(0,0,0,0.8);
       color: #999;
@@ -182,10 +183,10 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
       fill: #FF6DAF;
       font-size: 7em;
     }
-  `]
+  `
+  ]
 })
 export class DemoComponent implements OnInit, OnDestroy {
-
   percentageValue: (value: number) => string;
 
   gaugeValues: any = {
@@ -197,18 +198,17 @@ export class DemoComponent implements OnInit, OnDestroy {
     6: 50
   };
 
-  interval: number;
+  interval: any;
 
   constructor() {
     this.percentageValue = function(value: number): string {
-      return `${Math.round(value)} / ${this.max}`;
+      return `${Math.round(value)} / ${this['max']}`;
     };
   }
 
   ngOnInit(): void {
-
-    const updateValues: Function = (): void => {
-      this.gaugeValues =  {
+    const updateValues = (): void => {
+      this.gaugeValues = {
         1: Math.round(Math.random() * 100),
         2: Math.round(Math.random() * 100),
         3: Math.round(Math.random() * 100),
@@ -222,11 +222,9 @@ export class DemoComponent implements OnInit, OnDestroy {
 
     this.interval = setInterval(updateValues, INTERVAL);
     updateValues();
-
   }
 
   ngOnDestroy(): void {
     clearInterval(this.interval);
   }
-
 }
