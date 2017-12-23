@@ -370,6 +370,32 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <b> dialRadius</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>dialRadius:     <code>number</code>
+            </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Default value: </i><code>40</code>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The radius of the gauge</p>
+            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
                                     <b> dialStartAngle</b>
                                 </td>
                             </tr>
@@ -469,23 +495,23 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> radius</b>
+                                    <b> min</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>radius:     <code>number</code>
+                                    <code>min:     <code>number</code>
             </bcode>
                                 </td>
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <i>Default value: </i><code>400</code>
+                                        <i>Default value: </i><code>0</code>
                                     </td>
                                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>The radius of the gauge</p>
+                                    <div class="io-description"><p>The minimum value for the gauge</p>
             </div>
                                 </td>
                             </tr>
@@ -542,6 +568,32 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <b> valueClass</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>valueClass:     <code>string</code>
+            </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Default value: </i><code>value-text</code>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The CSS class of the gauge&#39;s text</p>
+            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
                                     <b> valueDialClass</b>
                                 </td>
                             </tr>
@@ -564,37 +616,10 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <b> valueTextClass</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <code>valueTextClass:     <code>string</code>
-            </bcode>
-                                </td>
-                            </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Default value: </i><code>value-text</code>
-                                    </td>
-                                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>The CSS class of the gauge&#39;s text</p>
-            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
             </section>
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
         <pre><code class="hljs javascript">export interface GaugeOptions {
-
   /**
    * The angle in degrees to start the dial
    */
@@ -608,7 +633,12 @@
   /**
    * The radius of the gauge
    */
-  radius?: number;
+  dialRadius?: number;
+
+  /**
+   * The minumum value for the gauge
+   */
+  min?: number;
 
   /**
    * The maximum value for the gauge
@@ -643,7 +673,7 @@
   /**
    * 	The CSS class of the gauge&#x27;s text
    */
-  valueTextClass?: string;
+  valueClass?: string;
 
   /**
    * The value of the gauge
@@ -659,11 +689,9 @@
    * Animation duration in seconds
    */
   animationDuration?: number;
-
 }
 
 export class GaugeDefaults implements GaugeOptions {
-
   /**
    * The angle in degrees to start the dial
    */
@@ -677,7 +705,12 @@ export class GaugeDefaults implements GaugeOptions {
   /**
    * The radius of the gauge
    */
-  radius: number &#x3D; 400;
+  dialRadius: number &#x3D; 40;
+
+  /**
+   * The minimum value for the gauge
+   */
+  min: number &#x3D; 0;
 
   /**
    * The maximum value for the gauge
@@ -712,7 +745,7 @@ export class GaugeDefaults implements GaugeOptions {
   /**
    * 	The CSS class of the gauge&#x27;s text
    */
-  valueTextClass: string &#x3D; &#x27;value-text&#x27;;
+  valueClass: string &#x3D; &#x27;value-text&#x27;;
 
   /**
    * The value of the gauge
@@ -728,8 +761,8 @@ export class GaugeDefaults implements GaugeOptions {
    * Animation duration in seconds
    */
   animationDuration: number;
-
-}</code></pre>
+}
+</code></pre>
     </div>
 </div>
 

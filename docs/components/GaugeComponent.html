@@ -363,6 +363,23 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
+                            <code>dialRadius</code>
+                        </td>
+                        <td class="col-md-10">
+                            <div><p>The radius of the gauge</p>
+</div>
+                              <p>
+                                <em>Type:</em>    <code>number</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
                             <code>dialStartAngle</code>
                         </td>
                         <td class="col-md-10">
@@ -431,10 +448,10 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
-                            <code>radius</code>
+                            <code>min</code>
                         </td>
                         <td class="col-md-10">
-                            <div><p>The radius of the gauge</p>
+                            <div><p>The minimum value for the gauge</p>
 </div>
                               <p>
                                 <em>Type:</em>    <code>number</code>
@@ -482,10 +499,10 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
-                            <code>valueDialClass</code>
+                            <code>valueClass</code>
                         </td>
                         <td class="col-md-10">
-                            <div><p>The CSS class of the gauge&#39;s fill (value dial)</p>
+                            <div><p>The CSS class of the gauge&#39;s text</p>
 </div>
                               <p>
                                 <em>Type:</em>    <code>string</code>
@@ -499,10 +516,10 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
-                            <code>valueTextClass</code>
+                            <code>valueDialClass</code>
                         </td>
                         <td class="col-md-10">
-                            <div><p>The CSS class of the gauge&#39;s text</p>
+                            <div><p>The CSS class of the gauge&#39;s fill (value dial)</p>
 </div>
                               <p>
                                 <em>Type:</em>    <code>string</code>
@@ -550,8 +567,17 @@
 
 </div>
         <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component, ElementRef, Input, Output, EventEmitter, AfterViewInit, OnChanges, SimpleChanges } from &#x27;@angular/core&#x27;;
-import * as Gauge from &#x27;svg-gauge&#x27;;
+            <pre><code class="hljs javascript">import {
+  Component,
+  ElementRef,
+  Input,
+  Output,
+  EventEmitter,
+  AfterViewInit,
+  OnChanges,
+  SimpleChanges
+} from &#x27;@angular/core&#x27;;
+import Gauge from &#x27;svg-gauge&#x27;;
 import { GaugeDefaults, GaugeOptions } from &#x27;./gauge-defaults.service&#x27;;
 
 @Component({
@@ -559,7 +585,6 @@ import { GaugeDefaults, GaugeOptions } from &#x27;./gauge-defaults.service&#x27;
   template: &#x27;&#x27;
 })
 export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
-
   /**
    * The angle in degrees to start the dial
    */
@@ -573,7 +598,12 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
   /**
    * The radius of the gauge
    */
-  @Input() radius: number;
+  @Input() dialRadius: number;
+
+  /**
+   * The minimum value for the gauge
+   */
+  @Input() min: number;
 
   /**
    * The maximum value for the gauge
@@ -608,7 +638,7 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
   /**
    * 	The CSS class of the gauge&#x27;s text
    */
-  @Input() valueTextClass: string;
+  @Input() valueClass: string;
 
   /**
    * The value of the gauge
@@ -628,25 +658,25 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
   /**
    * Called when the gauge is created
    */
-  @Output() gaugeCreated: EventEmitter&lt;{gauge: any}&gt; &#x3D; new EventEmitter();
+  @Output() gaugeCreated: EventEmitter&lt;{ gauge: any }&gt; &#x3D; new EventEmitter();
 
   private gauge: any;
 
   constructor(private elm: ElementRef, private defaults: GaugeDefaults) {}
 
   ngAfterViewInit(): void {
-
     const options: GaugeOptions &#x3D; {
       dialStartAngle: this.dialStartAngle,
       dialEndAngle: this.dialEndAngle,
-      radius: this.radius,
+      dialRadius: this.dialRadius,
+      min: this.min,
       max: this.max,
       label: this.label,
       showValue: this.showValue,
       gaugeClass: this.gaugeClass,
       dialClass: this.dialClass,
       valueDialClass: this.valueDialClass,
-      valueTextClass: this.valueTextClass,
+      valueClass: this.valueClass,
       value: this.value
     };
 
@@ -664,7 +694,7 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
 
     this.gauge &#x3D; Gauge(this.elm.nativeElement, options);
 
-    this.gaugeCreated.emit({gauge: this.gauge});
+    this.gaugeCreated.emit({ gauge: this.gauge });
 
     this.updateValue();
   }
@@ -684,7 +714,6 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
       }
     }
   }
-
 }
 </code></pre>
         </div>

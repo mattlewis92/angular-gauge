@@ -284,7 +284,9 @@
 import { GaugeComponent } from &#x27;./gauge.component&#x27;;
 import { GaugeDefaults, GaugeOptions } from &#x27;./gauge-defaults.service&#x27;;
 
-export const USER_DEFAULTS: InjectionToken&lt;string&gt; &#x3D; new InjectionToken(&#x27;gauge defaults&#x27;);
+export const USER_DEFAULTS: InjectionToken&lt;string&gt; &#x3D; new InjectionToken(
+  &#x27;gauge defaults&#x27;
+);
 
 export function defaultsFactory(userDefaults: GaugeOptions): GaugeDefaults {
   const defaults: GaugeDefaults &#x3D; new GaugeDefaults();
@@ -293,30 +295,28 @@ export function defaultsFactory(userDefaults: GaugeOptions): GaugeDefaults {
 }
 
 @NgModule({
-  declarations: [
-    GaugeComponent
-  ],
-  exports: [
-    GaugeComponent
-  ]
+  declarations: [GaugeComponent],
+  exports: [GaugeComponent]
 })
 export class GaugeModule {
-
   static forRoot(userDefaults: GaugeOptions &#x3D; {}): ModuleWithProviders {
     return {
       ngModule: GaugeModule,
-      providers: [{
-        provide: USER_DEFAULTS,
-        useValue: userDefaults
-      }, {
-        provide: GaugeDefaults,
-        useFactory: defaultsFactory,
-        deps: [USER_DEFAULTS]
-      }]
+      providers: [
+        {
+          provide: USER_DEFAULTS,
+          useValue: userDefaults
+        },
+        {
+          provide: GaugeDefaults,
+          useFactory: defaultsFactory,
+          deps: [USER_DEFAULTS]
+        }
+      ]
     };
   }
-
-}</code></pre>
+}
+</code></pre>
     </div>
 </div>
 
