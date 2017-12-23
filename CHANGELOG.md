@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### BREAKING CHANGES
 
+* The svg-gauge dependency was updated, your [CSS will need to be slightly adjusted](https://github.com/naikus/svg-gauge#migration-from-102).
 * The svg-gauge package is no longer bundled with this library, system.js users will
 have to add a reference to it in their system.js config
 * The `valueTextClass` input was renamed to `valueClass` and the `radius` input was
