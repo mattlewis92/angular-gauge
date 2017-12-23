@@ -35,7 +35,7 @@ export default config => {
           enforce: 'pre'
         }, {
           test: /\.ts$/,
-          loader: 'awesome-typescript-loader',
+          loader: 'ts-loader',
           exclude: /node_modules/
         }, {
           test: /src\/.+\.ts$/,
@@ -61,7 +61,9 @@ export default config => {
           /angular(\\|\/)core(\\|\/)esm5/,
           path.join(__dirname, 'src')
         ),
-        ...(config.singleRun ? [new webpack.NoEmitOnErrorsPlugin()] : [])
+        ...(config.singleRun ? [
+          new webpack.NoEmitOnErrorsPlugin()
+        ] : [])
       ]
     },
 
@@ -92,11 +94,6 @@ export default config => {
     phantomjsLauncher: {
       // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
       exitOnResourceError: true
-    },
-
-    browserConsoleLogOptions: {
-      terminal: true,
-      level: 'log'
     }
 
   });
