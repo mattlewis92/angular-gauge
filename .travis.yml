@@ -17,5 +17,7 @@ after_success:
 
 addons:
   chrome: stable
+  
+sudo: required
 
 dist: trusty
