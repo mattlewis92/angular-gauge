@@ -47,6 +47,11 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
   @Input() label: (value: number) => string;
 
   /**
+   * Function that returns a string color value for the gauge''s fill (value dial)
+   */
+  @Input() color: (value: number) => string;
+
+  /**
    * Whether to show the value at the center of the gauge
    */
   @Input() showValue: boolean;
@@ -108,7 +113,8 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
       dialClass: this.dialClass,
       valueDialClass: this.valueDialClass,
       valueClass: this.valueClass,
-      value: this.value
+      value: this.value,
+      color: this.color
     };
 
     Object.keys(this.defaults).forEach(optionKey => {
