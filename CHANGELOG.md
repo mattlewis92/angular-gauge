@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.1"></a>
+## [3.1.1](https://github.com/mattlewis92/angular-gauge/compare/v3.1.0...v3.1.1) (2018-05-05)
+
+
+### Bug Fixes
+
+* allow angular 6 peer dependency ([2ff6b49](https://github.com/mattlewis92/angular-gauge/commit/2ff6b49))
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/mattlewis92/angular-gauge/compare/v3.0.0...v3.1.0) (2018-01-19)
 
