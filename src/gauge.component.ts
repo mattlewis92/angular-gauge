@@ -138,7 +138,6 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['max']) {
-      console.log(changes)
       this.updateMax();
     }
     if (changes['value']) {
