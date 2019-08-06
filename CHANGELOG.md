@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.2"></a>
+## [3.1.2](https://github.com/mattlewis92/angular-gauge/compare/v3.1.1...v3.1.2) (2019-08-06)
+
+
+### Bug Fixes
+
+* allow angular 7 and 8 peer dependency ([869eee0](https://github.com/mattlewis92/angular-gauge/commit/869eee0))
+* upgrade svg gauge ([2d56240](https://github.com/mattlewis92/angular-gauge/commit/2d56240))
+
+
+
 <a name="3.1.1"></a>
 ## [3.1.1](https://github.com/mattlewis92/angular-gauge/compare/v3.1.0...v3.1.1) (2018-05-05)
 
