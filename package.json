@@ -1,6 +1,6 @@
 {
   "name": "angular-gauge",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "A tiny angular 5.0+ wrapper for https://github.com/naikus/svg-gauge",
   "scripts": {
     "start": "concurrently --raw \"webpack-dev-server --open\" \"npm run test:watch\"",
@@ -111,7 +111,7 @@
     "zone.js": "^0.8.20"
   },
   "peerDependencies": {
-    "@angular/core": ">=5.0.0 <7.0.0"
+    "@angular/core": ">=5.0.0 <9.0.0"
   },
   "config": {
     "commitizen": {
@@ -119,6 +119,6 @@
     }
   },
   "dependencies": {
-    "svg-gauge": "1.0.4"
+    "svg-gauge": "^1.0.6"
   }
 }
