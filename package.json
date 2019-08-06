@@ -119,6 +119,6 @@
     }
   },
   "dependencies": {
-    "svg-gauge": "1.0.4"
+    "svg-gauge": "^1.0.6"
   }
 }

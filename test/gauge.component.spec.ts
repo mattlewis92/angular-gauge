@@ -52,7 +52,7 @@ describe('mwl-gauge component', () => {
       expect(
         fixture.nativeElement.querySelector('mwl-gauge').innerHTML.trim()
       ).to.equal(
-        '<svg viewBox="0 0 100 100" class="gauge"><path class="dial" fill="none" stroke="#eee" stroke-width="2" d="M 21.716 78.284 A 40 40 0 1 1 78.284 78.284"></path><text x="50" y="50" fill="#999" class="value-text" font-size="100%" font-family="sans-serif" font-weight="normal" text-anchor="middle">25</text><path class="value" fill="none" stroke="#666" stroke-width="2.5" d="M 21.716 78.284 A 40 40 0 0 1 13.045 34.693"></path></svg>'
+        '<svg viewBox="0 0 100 100" class="gauge"><path class="dial" fill="none" stroke="#eee" stroke-width="2" d="M 21.716 78.284 A 40 40 0 1 1 78.284 78.284"></path><text x="50" y="50" fill="#999" class="value-text" font-size="100%" font-family="sans-serif" font-weight="normal" text-anchor="middle" alignment-baseline="middle" dominant-baseline="central">25</text><path class="value" fill="none" stroke="#666" stroke-width="2.5" d="M 21.716 78.284 A 40 40 0 0 1 13.045 34.693"></path></svg>'
       );
     });
 
@@ -66,7 +66,7 @@ describe('mwl-gauge component', () => {
       expect(
         fixture.nativeElement.querySelector('mwl-gauge').innerHTML.trim()
       ).to.equal(
-        '<svg viewBox="0 0 100 100" class="gauge"><path class="dial" fill="none" stroke="#eee" stroke-width="2" d="M 21.716 78.284 A 40 40 0 1 1 78.284 78.284"></path><text x="50" y="50" fill="#999" class="value-text" font-size="100%" font-family="sans-serif" font-weight="normal" text-anchor="middle">50</text><path class="value" fill="none" stroke="#666" stroke-width="2.5" d="M 21.716 78.284 A 40 40 0 0 1 50 10"></path></svg>'
+        '<svg viewBox="0 0 100 100" class="gauge"><path class="dial" fill="none" stroke="#eee" stroke-width="2" d="M 21.716 78.284 A 40 40 0 1 1 78.284 78.284"></path><text x="50" y="50" fill="#999" class="value-text" font-size="100%" font-family="sans-serif" font-weight="normal" text-anchor="middle" alignment-baseline="middle" dominant-baseline="central">50</text><path class="value" fill="none" stroke="#666" stroke-width="2.5" d="M 21.716 78.284 A 40 40 0 0 1 50 10"></path></svg>'
       );
     });
 
