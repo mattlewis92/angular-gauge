@@ -13,6 +13,7 @@ https://mattlewis92.github.io/angular-gauge/
 ## Table of contents
 
 - [About](#about)
+- [Compatibility](#compatibility)
 - [Installation](#installation)
 - [Documentation](#documentation)
 - [Development](#development)
@@ -21,6 +22,13 @@ https://mattlewis92.github.io/angular-gauge/
 ## About
 
 A tiny angular 5.0+ wrapper for https://github.com/naikus/svg-gauge
+
+## Compatibility
+
+| angular-gauge | Angular |
+|---------------|---------|
+| <=3.x.x       | <=9     |
+| 4.x.x         | 10      |
 
 ## Installation
 
