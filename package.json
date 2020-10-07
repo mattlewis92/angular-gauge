@@ -62,7 +62,7 @@
     "@angular/core": "^5.2.1",
     "@angular/platform-browser": "^5.2.1",
     "@angular/platform-browser-dynamic": "^5.2.1",
-    "@compodoc/compodoc": "^1.0.5",
+    "@compodoc/compodoc": "^1.1.11",
     "@types/chai": "^4.1.1",
     "@types/html-webpack-plugin": "^2.28.0",
     "@types/mocha": "^2.2.46",
@@ -106,7 +106,7 @@
     "validate-commit-msg": "^2.12.1",
     "webpack": "^3.10.0",
     "webpack-angular-externals": "^1.0.0",
-    "webpack-dev-server": "^2.11.0",
+    "webpack-dev-server": "^2.11.5",
     "webpack-rxjs-externals": "^1.0.0",
     "zone.js": "^0.8.20"
   },
