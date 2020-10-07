@@ -17,7 +17,7 @@ export function defaultsFactory(userDefaults: GaugeOptions): GaugeDefaults {
   exports: [GaugeComponent]
 })
 export class GaugeModule {
-  static forRoot(userDefaults: GaugeOptions = {}): ModuleWithProviders {
+  static forRoot(userDefaults: GaugeOptions = {}): ModuleWithProviders<GaugeModule> {
     return {
       ngModule: GaugeModule,
       providers: [
