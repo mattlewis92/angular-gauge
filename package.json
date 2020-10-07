@@ -93,7 +93,7 @@
     "mocha": "^5.0.0",
     "ng-packagr": "^10.1.2",
     "prettier": "^1.10.2",
-    "rxjs": "^5.5.6",
+    "rxjs": "^6.6.3",
     "sinon": "^4.1.6",
     "sinon-chai": "^2.8.0",
     "standard-version": "^4.3.0",
@@ -120,6 +120,7 @@
   },
   "dependencies": {
     "@angular-devkit/schematics": "^10.1.4",
-    "svg-gauge": "^1.0.6"
+    "svg-gauge": "^1.0.6",
+    "rxjs-compat": "^6.0.0-rc.0"
   }
 }
