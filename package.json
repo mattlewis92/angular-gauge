@@ -28,6 +28,7 @@
     ]
   },
   "ngPackage": {
+    "whitelistedNonPeerDependencies": ["svg-gauge"],
     "lib": {
       "entryFile": "src/index.ts",
       "umdModuleIds": {
@@ -117,6 +118,9 @@
   },
   "peerDependencies": {
     "@angular/core": ">=10.0.0",
+    "svg-gauge": "^1.0.6"
+  },
+  "dependencies": {
     "svg-gauge": "^1.0.6"
   },
   "config": {
