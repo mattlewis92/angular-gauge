@@ -18,10 +18,8 @@
     "release:npm": "npm run build:dist && npm run copyfiles && npm publish dist",
     "release": "npm run release:git && npm run release:npm",
     "postrelease": "npm run build:clean && npm run gh-pages",
-    "commitmsg": "validate-commit-msg",
     "codecov": "cat coverage/lcov.info | codecov",
-    "prettier": "prettier --write",
-    "precommit": "lint-staged"
+    "prettier": "prettier --write"
   },
   "lint-staged": {
     "{demo,src,test}/**/*.ts": [
@@ -122,5 +120,11 @@
     "@angular-devkit/schematics": "^10.1.4",
     "svg-gauge": "^1.0.6",
     "rxjs-compat": "^6.0.0-rc.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": "lint-staged"
+    }
   }
 }
