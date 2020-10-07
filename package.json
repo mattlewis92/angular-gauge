@@ -119,6 +119,7 @@
     }
   },
   "dependencies": {
+    "@angular-devkit/schematics": "^10.1.4",
     "svg-gauge": "^1.0.6"
   }
 }
