@@ -14,23 +14,25 @@ export function defaultsFactory(userDefaults: GaugeOptions): GaugeDefaults {
 
 @NgModule({
   declarations: [GaugeComponent],
-  exports: [GaugeComponent]
+  exports: [GaugeComponent],
 })
 export class GaugeModule {
-  static forRoot(userDefaults: GaugeOptions = {}): ModuleWithProviders {
+  static forRoot(
+    userDefaults: GaugeOptions = {}
+  ): ModuleWithProviders<GaugeModule> {
     return {
       ngModule: GaugeModule,
       providers: [
         {
           provide: USER_DEFAULTS,
-          useValue: userDefaults
+          useValue: userDefaults,
         },
         {
           provide: GaugeDefaults,
           useFactory: defaultsFactory,
-          deps: [USER_DEFAULTS]
-        }
-      ]
+          deps: [USER_DEFAULTS],
+        },
+      ],
     };
   }
 }

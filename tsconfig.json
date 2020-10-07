@@ -9,7 +9,8 @@
     "removeComments": false,
     "strict": true,
     "noImplicitAny": false,
-    "lib": ["es2015", "dom"]
+    "lib": ["es2015", "dom"],
+    "strictPropertyInitialization": false
   },
   "include": [
     "src/**/*",
