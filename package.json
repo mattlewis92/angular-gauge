@@ -30,7 +30,7 @@
   "ngPackage": {
     "lib": {
       "entryFile": "src/index.ts",
-      "externals": {
+      "umdModuleIds": {
         "svg-gauge": "Gauge"
       }
     }
@@ -54,6 +54,10 @@
   },
   "homepage": "https://github.com/mattlewis92/angular-gauge#readme",
   "devDependencies": {
+    "@angular-devkit/build-angular": "^0.1001.4",
+    "@angular-devkit/build-ng-packagr": "^0.1001.4",
+    "@angular-devkit/schematics": "^10.1.4",
+    "@angular/cli": "^10.1.4",
     "@angular/common": "^10.1.4",
     "@angular/compiler": "^10.1.4",
     "@angular/compiler-cli": "^10.1.4",
@@ -92,6 +96,7 @@
     "ng-packagr": "^10.1.2",
     "prettier": "^2.1.2",
     "rxjs": "^6.6.3",
+    "rxjs-compat": "^6.0.0-rc.0",
     "sinon": "^9.2.0",
     "sinon-chai": "^3.5.0",
     "standard-version": "^9.0.0",
@@ -109,17 +114,13 @@
     "zone.js": "^0.11.1"
   },
   "peerDependencies": {
-    "@angular/core": ">=10.0.0"
+    "@angular/core": ">=10.0.0",
+    "svg-gauge": "^1.0.6"
   },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
-  },
-  "dependencies": {
-    "@angular-devkit/schematics": "^10.1.4",
-    "svg-gauge": "^1.0.6",
-    "rxjs-compat": "^6.0.0-rc.0"
   },
   "husky": {
     "hooks": {
