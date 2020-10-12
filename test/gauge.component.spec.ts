@@ -17,9 +17,10 @@ import { GaugeModule } from '../src';
       [valueDialClass]="valueDialClass"
       [valueClass]="valueClass"
       [showValue]="showValue"
-      (gaugeCreated)="gaugeCreated($event)">
+      (gaugeCreated)="gaugeCreated($event)"
+    >
     </mwl-gauge>
-  `
+  `,
 })
 class TestComponent {
   @ViewChild(GaugeComponent) public gauge: GaugeComponent;
@@ -40,7 +41,7 @@ describe('mwl-gauge component', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
         imports: [GaugeModule.forRoot()],
-        declarations: [TestComponent]
+        declarations: [TestComponent],
       });
     });
 
@@ -76,7 +77,7 @@ describe('mwl-gauge component', () => {
       );
       fixture.detectChanges();
       expect(fixture.componentInstance.gaugeCreated).to.have.been.calledWith({
-        gauge: fixture.componentInstance.gauge['gauge']
+        gauge: fixture.componentInstance.gauge['gauge'],
       });
     });
 
@@ -110,7 +111,7 @@ describe('mwl-gauge component', () => {
       const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
         TestComponent
       );
-      fixture.componentInstance.label = value => `Value: ${value}`;
+      fixture.componentInstance.label = (value) => `Value: ${value}`;
       fixture.detectChanges();
       expect(
         fixture.nativeElement.querySelector('mwl-gauge').innerHTML
@@ -189,10 +190,10 @@ describe('mwl-gauge component', () => {
       TestBed.configureTestingModule({
         imports: [
           GaugeModule.forRoot({
-            label: value => `Value: ${value}`
-          })
+            label: (value) => `Value: ${value}`,
+          }),
         ],
-        declarations: [TestComponent]
+        declarations: [TestComponent],
       });
     });
 

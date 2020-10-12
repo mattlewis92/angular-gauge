@@ -1,6 +1,7 @@
 {
   "extends": "tslint-config-mwl",
   "rules": {
-    "no-inferrable-types": false
+    "no-inferrable-types": false,
+    "component-max-inline-declarations": false
   }
 }
