@@ -1,7 +1,7 @@
 {
   "name": "angular-gauge",
   "version": "3.1.3",
-  "description": "A tiny angular 5.0+ wrapper for https://github.com/naikus/svg-gauge",
+  "description": "A tiny angular 10.0+ wrapper for https://github.com/naikus/svg-gauge",
   "scripts": {
     "start": "concurrently --raw \"webpack-dev-server --open\" \"npm run test:watch\"",
     "build:demo": "webpack -p",
