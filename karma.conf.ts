@@ -24,6 +24,7 @@ export default config => {
     },
 
     webpack: {
+      mode: 'development',
       resolve: {
         extensions: ['.ts', '.js']
       },
@@ -54,6 +55,12 @@ export default config => {
           options: {
             esModules: true
           }
+        },
+        {
+          test: /node_modules\/@angular\/core\/.+\/core\.js$/,
+          parser: {
+            system: true // disable `System.import() is deprecated and will be removed soon. Use import() instead.` warning
+          }
         }]
       },
       plugins: [
@@ -62,8 +69,8 @@ export default config => {
           test: /\.(ts|js)($|\?)/i
         }),
         new webpack.ContextReplacementPlugin(
-          /angular(\\|\/)core(\\|\/)esm5/,
-          path.join(__dirname, 'src')
+          /angular(\\|\/)core(\\|\/)fesm5/,
+          __dirname + '/src'
         ),
         ...(config.singleRun ? [
           new webpack.NoEmitOnErrorsPlugin()

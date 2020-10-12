@@ -21,7 +21,7 @@ https://mattlewis92.github.io/angular-gauge/
 
 ## About
 
-A tiny angular 5.0+ wrapper for https://github.com/naikus/svg-gauge
+A tiny angular 10.0+ wrapper for https://github.com/naikus/svg-gauge
 
 ## Compatibility
 
