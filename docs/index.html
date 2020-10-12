@@ -8,324 +8,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-	    <link rel="stylesheet" href="./styles/style.css">
+	      <link rel="stylesheet" href="./styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="./" class="navbar-brand">angular-gauge documentation</a>
-            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-            <div id="book-search-input" role="search">
-                <input type="text" placeholder="Type to search">
-            </div>
-            <nav>
-            
-                <ul class="list">
-            
-                    <li class="title">
-                        <a href="./index.html">angular-gauge documentation</a>
-                    </li>
-            
-                    <li class="divider"></li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
-                        <ul class="links">
-                                <li class="link">
-                                    <a 
-                                        
-                                         href="./overview.html" 
-                                         href="./overview.html" 
-                                        >
-                                        <span class="fa fa-th"></span>Overview
-                                    </a>
-                                </li>
-                                <li class="link">
-                                  <a href="./index.html"  class="active" ><span class="fa fa-file-text-o"></span>README</a>
-                                </li>
-                                <li class="link">
-                                        <a href="./changelog.html"
-                                    >
-                                        <span class="fa fa-file-text-o"></span>CHANGELOG
-                                    </a>
-                                </li>
-                                <li class="link">
-                                        <a href="./license.html"
-                                    >
-                                        <span class="fa fa-file-text-o"></span>LICENSE
-                                    </a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="./modules.html" >
-                            <div class="menu-toggler linked" data-toggle="collapse"
-                                    data-target="#xs-modules-links"
-                            >
-                                <span class="fa fa-archive"></span>
-                                <span class="link-name">Modules</span>
-                                <span class="fa fa-angle-down"></span>
-                            </div>
-                        </a>
-                        <ul class="links collapse "
-                                id="xs-modules-links"
-                            >
-                                <li class="link">
-                                    <a href="./modules/GaugeModule.html" >GaugeModule</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-components-links"
-                            >
-                            <span class="fa fa-cogs"></span>
-                            <span>Components</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-components-links"
-                            >
-                                <li class="link">
-                                    <a href="./components/GaugeComponent.html" >GaugeComponent</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-classes-links"
-                            >
-                            <span class="fa fa-file-code-o"></span>
-                            <span>Classes</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-classes-links"
-                            >
-                                <li class="link">
-                                    <a href="./classes/GaugeDefaults.html" >GaugeDefaults</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-interfaces-links"
-                            >
-                            <span class="fa fa-info"></span>
-                            <span>Interfaces</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-interfaces-links"
-                            >
-                                <li class="link">
-                                    <a href="./interfaces/GaugeOptions.html" >GaugeOptions</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-miscellaneous-links"
-                            >
-                            <span class="fa fa-cubes"></span>
-                            <span>Miscellaneous</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-miscellaneous-links"
-                            >
-                                <li class="link">
-                                  <a href="./miscellaneous/functions.html" data-type="entity-link" >Functions</a>
-                                </li>
-                                <li class="link">
-                                  <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-            
-                    <li class="divider"></li>
-                    <li class="copyright">
-                            Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
-                                        <img src=".//images/compodoc-vectorise.svg" class="img-responsive">
-                            </a>
-                    </li>
-            
-                </ul>
-            
-            </nav>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <nav>
-                   
-                       <ul class="list">
-                   
-                           <li class="title">
-                               <a href="./index.html">angular-gauge documentation</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                   
-                               <div id="book-search-input" role="search">
-                                   <input type="text" placeholder="Type to search">
-                               </div>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
-                               <ul class="links">
-                                       <li class="link">
-                                           <a 
-                                               
-                                                href="./overview.html" 
-                                                href="./overview.html" 
-                                               >
-                                               <span class="fa fa-th"></span>Overview
-                                           </a>
-                                       </li>
-                                       <li class="link">
-                                         <a href="./index.html"  class="active" ><span class="fa fa-file-text-o"></span>README</a>
-                                       </li>
-                                       <li class="link">
-                                               <a href="./changelog.html"
-                                           >
-                                               <span class="fa fa-file-text-o"></span>CHANGELOG
-                                           </a>
-                                       </li>
-                                       <li class="link">
-                                               <a href="./license.html"
-                                           >
-                                               <span class="fa fa-file-text-o"></span>LICENSE
-                                           </a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="./modules.html" >
-                                   <div class="menu-toggler linked" data-toggle="collapse"
-                                           data-target="#modules-links"
-                                   >
-                                       <span class="fa fa-archive"></span>
-                                       <span class="link-name">Modules</span>
-                                       <span class="fa fa-angle-down"></span>
-                                   </div>
-                               </a>
-                               <ul class="links collapse "
-                                       id="modules-links"
-                   >
-                                       <li class="link">
-                                           <a href="./modules/GaugeModule.html" >GaugeModule</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#components-links"
-                   >
-                                   <span class="fa fa-cogs"></span>
-                                   <span>Components</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="components-links"
-                   >
-                                       <li class="link">
-                                           <a href="./components/GaugeComponent.html" >GaugeComponent</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#classes-links"
-                   >
-                                   <span class="fa fa-file-code-o"></span>
-                                   <span>Classes</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="classes-links"
-                   >
-                                       <li class="link">
-                                           <a href="./classes/GaugeDefaults.html" >GaugeDefaults</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#interfaces-links"
-                   >
-                                   <span class="fa fa-info"></span>
-                                   <span>Interfaces</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="interfaces-links"
-                   >
-                                       <li class="link">
-                                           <a href="./interfaces/GaugeOptions.html" >GaugeOptions</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#miscellaneous-links"
-                   >
-                                   <span class="fa fa-cubes"></span>
-                                   <span>Miscellaneous</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="miscellaneous-links"
-                   >
-                                       <li class="link">
-                                         <a href="./miscellaneous/functions.html" data-type="entity-link" >Functions</a>
-                                       </li>
-                                       <li class="link">
-                                         <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                   
-                           <li class="divider"></li>
-                           <li class="copyright">
-                                   Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
-                                               <img src=".//images/compodoc-vectorise.svg" class="img-responsive">
-                                   </a>
-                           </li>
-                   
-                       </ul>
-                   
-                   </nav>
+                   <compodoc-menu mode="normal"></compodoc-menu>
                </div>
+               <!-- START CONTENT -->
                <div class="content getting-started">
                    <div class="content-data">
 
@@ -342,26 +43,44 @@
 <h2 id="table-of-contents">Table of contents</h2>
 <ul>
 <li><a href="#about">About</a></li>
+<li><a href="#compatibility">Compatibility</a></li>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#documentation">Documentation</a></li>
 <li><a href="#development">Development</a></li>
 <li><a href="#license">License</a></li>
 </ul>
 <h2 id="about">About</h2>
-<p>A tiny angular 5.0+ wrapper for <a href="https://github.com/naikus/svg-gauge">https://github.com/naikus/svg-gauge</a></p>
+<p>A tiny angular 10.0+ wrapper for <a href="https://github.com/naikus/svg-gauge">https://github.com/naikus/svg-gauge</a></p>
+<h2 id="compatibility">Compatibility</h2>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>angular-gauge</th>
+<th>Angular</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;=3.x.x</td>
+<td>&lt;=9</td>
+</tr>
+<tr>
+<td>4.x.x</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
 <h2 id="installation">Installation</h2>
 <p>Install through npm:</p>
-<pre class="line-numbers"><code class="language-none">npm install --save angular-gauge</code></pre><p>Then include in your apps module:</p>
-<pre class="line-numbers"><code class="language-typescript">import { Component, NgModule } from &#39;&#64;angular/core&#39;;
+<div><pre class="line-numbers"><code class="language-none">npm install --save angular-gauge</code></pre></div><p>Then include in your apps module:</p>
+<div><pre class="line-numbers"><code class="language-typescript">import { Component, NgModule } from &#39;&#64;angular/core&#39;;
 import { GaugeModule } from &#39;angular-gauge&#39;;
 
 &#64;NgModule({
-  imports: [
-    GaugeModule.forRoot()
-  ]
+  imports: [GaugeModule.forRoot()],
 })
-export class MyModule {}</code></pre><p>By default no styling is included with the gauge so you need to define some global styles:</p>
-<pre class="line-numbers"><code class="language-css">mwl-gauge {
+export class MyModule {}</code></pre></div><p>By default no styling is included with the gauge so you need to define some global styles:</p>
+<div><pre class="line-numbers"><code class="language-css">mwl-gauge {
   width: 150px;
   height: 150px;
   display: block;
@@ -370,20 +89,20 @@ export class MyModule {}</code></pre><p>By default no styling is included with t
 mwl-gauge &gt; .gauge &gt; .dial {
   stroke: #eee;
   stroke-width: 2;
-  fill: rgba(0,0,0,0);
+  fill: rgba(0, 0, 0, 0);
 }
 mwl-gauge &gt; .gauge &gt; .value {
   stroke: rgb(47, 227, 255);
   stroke-width: 2;
-  fill: rgba(0,0,0,0);
+  fill: rgba(0, 0, 0, 0);
 }
 mwl-gauge &gt; .gauge &gt; .value-text {
   fill: rgb(47, 227, 255);
   font-family: sans-serif;
   font-weight: bold;
   font-size: 1em;
-}</code></pre><p>Finally use in one of your apps components:</p>
-<pre class="line-numbers"><code class="language-typescript">import { Component } from &#39;&#64;angular/core&#39;;
+}</code></pre></div><p>Finally use in one of your apps components:</p>
+<div><pre class="line-numbers"><code class="language-typescript">import { Component } from &#39;&#64;angular/core&#39;;
 
 &#64;Component({
   template: `
@@ -393,17 +112,18 @@ mwl-gauge &gt; .gauge &gt; .value-text {
       [dialEndAngle]=&quot;-90.001&quot;
       [value]=&quot;50&quot;
       [animated]=&quot;true&quot;
-      [animationDuration]=&quot;1&quot;&gt;
+      [animationDuration]=&quot;1&quot;
+    &gt;
     &lt;/mwl-gauge&gt;
-  `
+  `,
 })
-export class MyComponent {}</code></pre><p>You may also find it useful to view the <a href="https://github.com/mattlewis92/angular-gauge/blob/master/demo/demo.component.ts">demo source</a>.</p>
+export class MyComponent {}</code></pre></div><p>You may also find it useful to view the <a href="https://github.com/mattlewis92/angular-gauge/blob/master/demo/demo.component.ts">demo source</a>.</p>
 <p>This lib is just a tiny wrapper over the excellent <a href="https://github.com/naikus/svg-gauge">svg-gauge</a> library.</p>
 <h3 id="usage-without-a-module-bundler">Usage without a module bundler</h3>
-<pre class="line-numbers"><code class="language-none">&lt;script src=&quot;node_modules/angular-gauge/bundles/angular-gauge.umd.js&quot;&gt;&lt;/script&gt;
+<div><pre class="line-numbers"><code class="language-none">&lt;script src=&quot;node_modules/angular-gauge/bundles/angular-gauge.umd.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
     // everything is exported `angular-gauge` namespace
-&lt;/script&gt;</code></pre><h2 id="documentation">Documentation</h2>
+&lt;/script&gt;</code></pre></div><h2 id="documentation">Documentation</h2>
 <p>All documentation is auto-generated from the source via <a href="https://compodoc.github.io/compodoc/">compodoc</a> and can be viewed here:
 <a href="https://mattlewis92.github.io/angular-gauge/docs/">https://mattlewis92.github.io/angular-gauge/docs/</a></p>
 <h2 id="development">Development</h2>
@@ -417,7 +137,7 @@ export class MyComponent {}</code></pre><p>You may also find it useful to view t
 <h3 id="testing">Testing</h3>
 <p>Run <code>npm test</code> to run tests once or <code>npm run test:watch</code> to continually run tests.</p>
 <h3 id="release">Release</h3>
-<pre class="line-numbers"><code class="language-bash">npm run release</code></pre><h2 id="license">License</h2>
+<div><pre class="line-numbers"><code class="language-bash">npm run release</code></pre></div><h2 id="license">License</h2>
 <p>MIT</p>
 
 
@@ -433,9 +153,14 @@ export class MyComponent {}</code></pre><p>You may also find it useful to view t
 
 
 
+                   
+
+
+
+
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -443,8 +168,22 @@ export class MyComponent {}</code></pre><p>You may also find it useful to view t
     </div>
 </div>
 </div>
+               <!-- END CONTENT -->
            </div>
        </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
 
        <script src="./js/libs/bootstrap-native.js"></script>
 
@@ -455,17 +194,17 @@ export class MyComponent {}</code></pre><p>You may also find it useful to view t
 
        <script src="./js/compodoc.js"></script>
 
-       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 0;</script>
-
-       <script src="./js/search/search.js"></script>
-       <script src="./js/search/lunr.min.js"></script>
-       <script src="./js/search/search-lunr.js"></script>
-
        <script src="./js/tabs.js"></script>
        <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
        <script src="./js/libs/prism.js"></script>
        <script src="./js/sourceCode.js"></script>
-       <script src="./js/search/search_index.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
 
     </body>
 </html>
