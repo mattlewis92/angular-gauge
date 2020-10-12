@@ -117,8 +117,7 @@
     "zone.js": "^0.11.1"
   },
   "peerDependencies": {
-    "@angular/core": ">=10.0.0",
-    "svg-gauge": "^1.0.6"
+    "@angular/core": ">=10.0.0"
   },
   "dependencies": {
     "svg-gauge": "^1.0.6"
