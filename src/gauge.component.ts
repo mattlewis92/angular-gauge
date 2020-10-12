@@ -98,7 +98,7 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
 
   private gauge: any;
 
-  constructor(private elm: ElementRef, private defaults: GaugeDefaults) {}
+  constructor(private elm: ElementRef, private defaults: GaugeDefaults) { }
 
   ngAfterViewInit(): void {
     const options: GaugeOptions = {
@@ -137,9 +137,13 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    if (changes['max']) {
+      this.updateMax();
+    }
     if (changes['value']) {
       this.updateValue();
     }
+
   }
 
   private updateValue(): void {
@@ -149,6 +153,14 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
       } else {
         this.gauge.setValue(this.value);
       }
+    }
+  }
+
+  private updateMax(): void {
+    if (this.gauge) {
+
+      this.gauge.setMaxValue(this.max);
+
     }
   }
 }
