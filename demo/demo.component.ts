@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'mwl-demo-app',
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None, // tslint:disable-line
   template: `
     <div class="gauges-container">
       <mwl-gauge

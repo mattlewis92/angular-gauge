@@ -1,4 +1,5 @@
 # angular gauge
+
 [![Build Status](https://travis-ci.org/mattlewis92/angular-gauge.svg?branch=master)](https://travis-ci.org/mattlewis92/angular-gauge)
 [![codecov](https://codecov.io/gh/mattlewis92/angular-gauge/branch/master/graph/badge.svg)](https://codecov.io/gh/mattlewis92/angular-gauge)
 [![npm version](https://badge.fury.io/js/angular-gauge.svg)](http://badge.fury.io/js/angular-gauge)
@@ -8,6 +9,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/mattlewis92/angular-gauge/master/LICENSE)
 
 ## Demo
+
 https://mattlewis92.github.io/angular-gauge/
 
 ## Table of contents
@@ -26,13 +28,14 @@ A tiny angular 10.0+ wrapper for https://github.com/naikus/svg-gauge
 ## Compatibility
 
 | angular-gauge | Angular |
-|---------------|---------|
+| ------------- | ------- |
 | <=3.x.x       | <=9     |
 | 4.x.x         | 10      |
 
 ## Installation
 
 Install through npm:
+
 ```
 npm install --save angular-gauge
 ```
@@ -44,14 +47,13 @@ import { Component, NgModule } from '@angular/core';
 import { GaugeModule } from 'angular-gauge';
 
 @NgModule({
-  imports: [
-    GaugeModule.forRoot()
-  ]
+  imports: [GaugeModule.forRoot()],
 })
 export class MyModule {}
 ```
 
 By default no styling is included with the gauge so you need to define some global styles:
+
 ```css
 mwl-gauge {
   width: 150px;
@@ -62,12 +64,12 @@ mwl-gauge {
 mwl-gauge > .gauge > .dial {
   stroke: #eee;
   stroke-width: 2;
-  fill: rgba(0,0,0,0);
+  fill: rgba(0, 0, 0, 0);
 }
 mwl-gauge > .gauge > .value {
   stroke: rgb(47, 227, 255);
   stroke-width: 2;
-  fill: rgba(0,0,0,0);
+  fill: rgba(0, 0, 0, 0);
 }
 mwl-gauge > .gauge > .value-text {
   fill: rgb(47, 227, 255);
@@ -78,6 +80,7 @@ mwl-gauge > .gauge > .value-text {
 ```
 
 Finally use in one of your apps components:
+
 ```typescript
 import { Component } from '@angular/core';
 
@@ -89,9 +92,10 @@ import { Component } from '@angular/core';
       [dialEndAngle]="-90.001"
       [value]="50"
       [animated]="true"
-      [animationDuration]="1">
+      [animationDuration]="1"
+    >
     </mwl-gauge>
-  `
+  `,
 })
 export class MyComponent {}
 ```
@@ -101,6 +105,7 @@ You may also find it useful to view the [demo source](https://github.com/mattlew
 This lib is just a tiny wrapper over the excellent [svg-gauge](https://github.com/naikus/svg-gauge) library.
 
 ### Usage without a module bundler
+
 ```
 <script src="node_modules/angular-gauge/bundles/angular-gauge.umd.js"></script>
 <script>
@@ -109,22 +114,27 @@ This lib is just a tiny wrapper over the excellent [svg-gauge](https://github.co
 ```
 
 ## Documentation
+
 All documentation is auto-generated from the source via [compodoc](https://compodoc.github.io/compodoc/) and can be viewed here:
 https://mattlewis92.github.io/angular-gauge/docs/
 
 ## Development
 
 ### Prepare your environment
-* Install [Node.js](http://nodejs.org/) and NPM (should come with)
-* Install local dev dependencies: `npm install` while current directory is this repo
+
+- Install [Node.js](http://nodejs.org/) and NPM (should come with)
+- Install local dev dependencies: `npm install` while current directory is this repo
 
 ### Development server
+
 Run `npm start` to start a development server on port 8000 with auto reload + tests.
 
 ### Testing
+
 Run `npm test` to run tests once or `npm run test:watch` to continually run tests.
 
 ### Release
+
 ```bash
 npm run release
 ```

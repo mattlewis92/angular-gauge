@@ -22,13 +22,15 @@
     "prettier": "prettier --write"
   },
   "lint-staged": {
-    "{demo,src,test}/**/*.ts": [
+    "**/*.{ts,html}": [
       "npm run prettier",
       "git add"
     ]
   },
   "ngPackage": {
-    "whitelistedNonPeerDependencies": ["svg-gauge"],
+    "whitelistedNonPeerDependencies": [
+      "svg-gauge"
+    ],
     "lib": {
       "entryFile": "src/index.ts",
       "umdModuleIds": {
@@ -101,7 +103,6 @@
     "sinon": "^9.2.0",
     "sinon-chai": "^3.5.0",
     "standard-version": "^9.0.0",
-    "svg-gauge": "^1.0.6",
     "ts-loader": "^8.0.4",
     "ts-node": "^9.0.0",
     "tslint": "^6.1.3",
