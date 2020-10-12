@@ -23,8 +23,7 @@
   },
   "lint-staged": {
     "**/*.{ts,html}": [
-      "npm run prettier",
-      "git add"
+      "npm run prettier"
     ]
   },
   "ngPackage": {
