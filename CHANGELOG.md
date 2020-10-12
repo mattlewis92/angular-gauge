@@ -1,6 +1,17 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [4.0.0](https://github.com/mattlewis92/angular-gauge/compare/v3.1.3...v4.0.0) (2020-10-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* angular 10 or higher is now required to use this package
+
+### Features
+
+* upgrade to angular 10 ([4736149](https://github.com/mattlewis92/angular-gauge/commit/47361498935bfed9e5f5f91fc1c44a6291d352ec))
 
 <a name="3.1.3"></a>
 
