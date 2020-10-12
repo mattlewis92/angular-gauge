@@ -11,6 +11,7 @@ export default {
   entry: path.join(__dirname, 'demo', 'entry.ts'),
   output: {
     filename: IS_PROD ? '[name]-[chunkhash].js' : '[name].js',
+    path: __dirname,
   },
   module: {
     rules: [
