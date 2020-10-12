@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-- '8'
+- '14'
 
 script: npm test
 
@@ -17,7 +17,7 @@ after_success:
 
 addons:
   chrome: stable
-  
+
 sudo: required
 
 dist: trusty

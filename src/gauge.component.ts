@@ -6,14 +6,14 @@ import {
   EventEmitter,
   AfterViewInit,
   OnChanges,
-  SimpleChanges
+  SimpleChanges,
 } from '@angular/core';
 import Gauge from 'svg-gauge';
 import { GaugeDefaults, GaugeOptions } from './gauge-defaults.service';
 
 @Component({
   selector: 'mwl-gauge',
-  template: ''
+  template: '',
 })
 export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
   /**
@@ -114,16 +114,16 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
       valueDialClass: this.valueDialClass,
       valueClass: this.valueClass,
       value: this.value,
-      color: this.color
+      color: this.color,
     };
 
-    Object.keys(this.defaults).forEach(optionKey => {
+    Object.keys(this.defaults).forEach((optionKey) => {
       if (typeof options[optionKey] === 'undefined') {
         options[optionKey] = this.defaults[optionKey];
       }
     });
 
-    Object.keys(options).forEach(optionKey => {
+    Object.keys(options).forEach((optionKey) => {
       if (typeof options[optionKey] === 'undefined') {
         delete options[optionKey];
       }
