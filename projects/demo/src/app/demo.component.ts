@@ -1,8 +1,9 @@
-import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {GaugeOptions} from '../../../angular-gauge/src/lib/gauge-defaults.service';
 
 @Component({
   selector: 'mwl-demo-app',
-  encapsulation: ViewEncapsulation.None, // tslint:disable-line
+  encapsulation: ViewEncapsulation.None,
   template: `
     <div class="gauges-container">
       <mwl-gauge
@@ -228,7 +229,7 @@ export class DemoComponent implements OnInit, OnDestroy {
 
   constructor() {
     this.percentageValue = function (value: number): string {
-      return `${Math.round(value)} / ${this['max']}`;
+      return `${Math.round(value)} / ${(this as GaugeOptions)['max']}`;
     };
   }
 

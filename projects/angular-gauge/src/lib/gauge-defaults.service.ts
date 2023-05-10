@@ -104,12 +104,12 @@ export class GaugeDefaults implements GaugeOptions {
   /**
    * Function that returns a string label that will be rendered in the center. This function will be passed the current value
    */
-  label: (value: number) => string;
+  label?: (value: number) => string;
 
   /**
    * Function that returns a string color value for the gauge''s fill (value dial)
    */
-  color: (value: number) => string;
+  color?: (value: number) => string;
 
   /**
    * Whether to show the value at the center of the gauge
@@ -139,7 +139,7 @@ export class GaugeDefaults implements GaugeOptions {
   /**
    * The value of the gauge
    */
-  value: number;
+  value?: number;
 
   /**
    * Whether to animate changing the gauge
@@ -149,5 +149,5 @@ export class GaugeDefaults implements GaugeOptions {
   /**
    * Animation duration in seconds
    */
-  animationDuration: number;
+  animationDuration?: number;
 }

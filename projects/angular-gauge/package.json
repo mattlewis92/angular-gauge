@@ -1,0 +1,13 @@
+{
+  "name": "angular-gauge",
+  "version": "4.0.0",
+  "peerDependencies": {
+    "@angular/common": ">=15.0.0",
+    "@angular/core": ">=15.0.0"
+  },
+  "dependencies": {
+    "svg-gauge": "^1.0.7",
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

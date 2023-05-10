@@ -1,13 +1,10 @@
 {
   "extends": "./tsconfig.json",
   "include": [
-    "src/**/*.ts"
+    "projects/angular-gauge/**/*.ts"
   ],
   "exclude": [
     "node_modules",
-    "demo",
-    "test",
-    "karma.conf.ts",
-    "webpack.config.ts"
+    "projects/demo"
   ]
 }

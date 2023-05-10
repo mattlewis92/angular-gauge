@@ -1,95 +1,95 @@
 import {
+  AfterViewInit,
   Component,
   ElementRef,
-  Input,
-  Output,
   EventEmitter,
-  AfterViewInit,
+  Input,
   OnChanges,
-  SimpleChanges,
+  Output,
+  SimpleChanges
 } from '@angular/core';
+import {GaugeDefaults, GaugeOptions} from './gauge-defaults.service';
 import Gauge from 'svg-gauge';
-import { GaugeDefaults, GaugeOptions } from './gauge-defaults.service';
 
 @Component({
   selector: 'mwl-gauge',
-  template: '',
+  template: ''
 })
 export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
   /**
    * The angle in degrees to start the dial
    */
-  @Input() dialStartAngle: number;
+  @Input() dialStartAngle!: number;
 
   /**
    * The angle in degrees to end the dial. This MUST be less than dialStartAngle
    */
-  @Input() dialEndAngle: number;
+  @Input() dialEndAngle!: number;
 
   /**
    * The radius of the gauge
    */
-  @Input() dialRadius: number;
+  @Input() dialRadius!: number;
 
   /**
    * The minimum value for the gauge
    */
-  @Input() min: number;
+  @Input() min!: number;
 
   /**
    * The maximum value for the gauge
    */
-  @Input() max: number;
+  @Input() max!: number;
 
   /**
    * Function that returns a string label that will be rendered in the center. This function will be passed the current value
    */
-  @Input() label: (value: number) => string;
+  @Input() label!: (value: number) => string;
 
   /**
    * Function that returns a string color value for the gauge''s fill (value dial)
    */
-  @Input() color: (value: number) => string;
+  @Input() color!: (value: number) => string;
 
   /**
    * Whether to show the value at the center of the gauge
    */
-  @Input() showValue: boolean;
+  @Input() showValue!: boolean;
 
   /**
    * The CSS class of the gauge
    */
-  @Input() gaugeClass: string;
+  @Input() gaugeClass!: string;
 
   /**
    * The CSS class of the gauge's dial
    */
-  @Input() dialClass: string;
+  @Input() dialClass!: string;
 
   /**
    * The CSS class of the gauge's fill (value dial)
    */
-  @Input() valueDialClass: string;
+  @Input() valueDialClass!: string;
 
   /**
    * 	The CSS class of the gauge's text
    */
-  @Input() valueClass: string;
+  @Input() valueClass!: string;
 
   /**
    * The value of the gauge
    */
-  @Input() value: number;
+  @Input() value!: number;
 
   /**
    * Whether to animate changing the gauge
    */
-  @Input() animated: boolean;
+  @Input() animated!: boolean;
 
   /**
    * Animation duration in seconds
    */
-  @Input() animationDuration: number;
+  @Input() animationDuration!: number;
 
   /**
    * Called when the gauge is created
@@ -118,16 +118,19 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
     };
 
     Object.keys(this.defaults).forEach((optionKey) => {
-      if (typeof options[optionKey] === 'undefined') {
-        options[optionKey] = this.defaults[optionKey];
+      const key = optionKey as keyof GaugeOptions;
+      if(options[key] == null){
+        options[key] = this.defaults[key] as any;
       }
     });
 
     Object.keys(options).forEach((optionKey) => {
-      if (typeof options[optionKey] === 'undefined') {
-        delete options[optionKey];
+      const key = optionKey as keyof GaugeOptions;
+      if(options[key] == null){
+        delete options[key];
       }
     });
+
 
     this.gauge = Gauge(this.elm.nativeElement, options);
 
