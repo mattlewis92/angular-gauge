@@ -11,7 +11,7 @@
     "test": "ng test angular-gauge --watch=false --browsers=ChromeHeadless",
     "test:watch": "ng test angular-gauge --watch --browsers=ChromeHeadless",
     "commit": "git-cz",
-    "compodoc": "compodoc -p tsconfig-compodoc.json -d docs --disableGraph --disableCoverage --disablePrivate --disableInternal --disableLifeCycleHooks --disableProtected",
+    "compodoc": "compodoc -p tsconfig-compodoc.json -d dist/demo/docs --disableGraph --disableCoverage --disablePrivate --disableInternal --disableLifeCycleHooks --disableProtected",
     "gh-pages": "npm run build:clean && npm run build:demo && npm run compodoc && ng deploy && npm run build:clean",
     "copyfiles": "copyfiles README.md CHANGELOG.md dist/angular-gauge",
     "prerelease": "npm test",
