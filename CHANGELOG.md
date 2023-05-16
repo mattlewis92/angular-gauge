@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/mattlewis92/angular-gauge/compare/v4.0.0...v5.0.0) (2023-05-16)
+
+### ⚠ BREAKING CHANGES
+
+- the minimum supported version of angular by this package is now v15
+
+### Features
+
+- upgrade to angular 15/16 ([#27](https://github.com/mattlewis92/angular-gauge/issues/27)) ([203a5f6](https://github.com/mattlewis92/angular-gauge/commit/203a5f60267714fbfe7f035d3d5607ca6f415912))
+
 ## [4.0.0](https://github.com/mattlewis92/angular-gauge/compare/v3.1.3...v4.0.0) (2020-10-12)
 
 ### ⚠ BREAKING CHANGES
