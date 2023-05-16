@@ -44,6 +44,7 @@
     "commitizen": "^4.2.1",
     "copyfiles": "^2.4.0",
     "cz-conventional-changelog": "^3.3.0",
+    "del-cli": "^5.0.0",
     "husky": "^8.0.3",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
