@@ -1,20 +1,15 @@
-import {InjectionToken, ModuleWithProviders, NgModule} from '@angular/core';
-import {GaugeComponent} from './gauge.component';
-import {GaugeDefaults, GaugeOptions} from './gauge-defaults.service';
+import { InjectionToken, ModuleWithProviders, NgModule } from '@angular/core';
+import { GaugeComponent } from './gauge.component';
+import { GaugeDefaults, GaugeOptions } from './gauge-defaults.service';
 
 export const USER_DEFAULTS: InjectionToken<string> = new InjectionToken(
   'gauge defaults'
 );
 
 @NgModule({
-  declarations: [
-    GaugeComponent
-  ],
-  imports: [
-  ],
-  exports: [
-    GaugeComponent
-  ]
+  declarations: [GaugeComponent],
+  imports: [],
+  exports: [GaugeComponent],
 })
 export class GaugeModule {
   static forRoot(
@@ -34,7 +29,7 @@ export class GaugeModule {
             Object.assign(defaults, options);
             return defaults;
           },
-          deps: [USER_DEFAULTS]
+          deps: [USER_DEFAULTS],
         },
       ],
     };

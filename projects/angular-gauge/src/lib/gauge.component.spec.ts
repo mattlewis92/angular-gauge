@@ -1,7 +1,7 @@
-import {Component, ViewChild} from '@angular/core';
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {GaugeComponent} from './gauge.component';
-import {GaugeModule} from './gauge.module';
+import { Component, ViewChild } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { GaugeComponent } from './gauge.component';
+import { GaugeModule } from './gauge.module';
 
 @Component({
   template: `
@@ -43,7 +43,7 @@ describe('mwl-gauge component', () => {
         imports: [GaugeModule.forRoot()],
         declarations: [TestComponent],
       });
-      fixture  = TestBed.createComponent(TestComponent);
+      fixture = TestBed.createComponent(TestComponent);
     });
 
     it('should create a gauge', () => {
@@ -68,7 +68,9 @@ describe('mwl-gauge component', () => {
 
     it('should emit the gauge when it is created', () => {
       fixture.detectChanges();
-      expect(fixture.componentInstance.gaugeCreated?.gauge).toEqual(fixture.componentInstance.gauge['gauge']);
+      expect(fixture.componentInstance.gaugeCreated?.gauge).toEqual(
+        fixture.componentInstance.gauge['gauge']
+      );
     });
 
     it('should animate changing the gauge value', () => {
@@ -77,7 +79,7 @@ describe('mwl-gauge component', () => {
       fixture.detectChanges();
       const gauge: any = fixture.componentInstance.gauge['gauge'];
 
-      spyOn(gauge, "setValueAnimated")
+      spyOn(gauge, 'setValueAnimated');
       fixture.componentInstance.value = 50;
       fixture.detectChanges();
       expect(gauge.setValueAnimated).toHaveBeenCalledWith(50, 1);
@@ -86,7 +88,7 @@ describe('mwl-gauge component', () => {
     it('should not animate changing the gauge value', () => {
       fixture.detectChanges();
       const gauge: any = fixture.componentInstance.gauge['gauge'];
-      spyOn(gauge, "setValue")
+      spyOn(gauge, 'setValue');
       fixture.componentInstance.value = 50;
       fixture.detectChanges();
       expect(gauge.setValue).toHaveBeenCalledWith(50);
@@ -162,9 +164,8 @@ describe('mwl-gauge component', () => {
     });
 
     it('should allow defaults to be configured globally', () => {
-      const fixture: ComponentFixture<TestComponent> = TestBed.createComponent(
-        TestComponent
-      );
+      const fixture: ComponentFixture<TestComponent> =
+        TestBed.createComponent(TestComponent);
       fixture.detectChanges();
       expect(
         fixture.nativeElement.querySelector('mwl-gauge').innerHTML

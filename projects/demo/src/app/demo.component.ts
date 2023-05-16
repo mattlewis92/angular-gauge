@@ -1,5 +1,5 @@
-import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-import {GaugeOptions} from '../../../angular-gauge/src/lib/gauge-defaults.service';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { GaugeOptions } from '../../../angular-gauge/src/lib/gauge-defaults.service';
 
 @Component({
   selector: 'mwl-demo-app',

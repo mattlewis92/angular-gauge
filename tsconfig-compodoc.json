@@ -1,10 +1,5 @@
 {
   "extends": "./tsconfig.json",
-  "include": [
-    "projects/angular-gauge/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "projects/demo"
-  ]
+  "include": ["projects/angular-gauge/**/*.ts"],
+  "exclude": ["node_modules", "projects/demo"]
 }
