@@ -1,0 +1,14 @@
+{
+  "packageFiles": [
+    {
+      "filename": "projects/angular-gauge/package.json",
+      "type": "json"
+    }
+  ],
+  "bumpFiles": [
+    {
+      "filename": "projects/angular-gauge/package.json",
+      "type": "json"
+    }
+  ]
+}
