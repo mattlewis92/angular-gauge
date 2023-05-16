@@ -3,7 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "angular-gauge": ["dist/angular-gauge"]
+      "angular-gauge": ["projects/angular-gauge/src/public-api.ts"]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
