@@ -1,6 +1,6 @@
 # angular gauge
 
-[![Build Status](https://travis-ci.org/mattlewis92/angular-gauge.svg?branch=main)](https://travis-ci.org/mattlewis92/angular-gauge)
+[![Build Status](https://github.com/mattlewis92/angular-gauge/actions/workflows/ci.yml/badge.svg)](https://github.com/mattlewis92/angular-gauge/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/mattlewis92/angular-gauge/branch/main/graph/badge.svg)](https://codecov.io/gh/mattlewis92/angular-gauge)
 [![npm version](https://badge.fury.io/js/angular-gauge.svg)](http://badge.fury.io/js/angular-gauge)
 [![devDependency Status](https://david-dm.org/mattlewis92/angular-gauge/dev-status.svg)](https://david-dm.org/mattlewis92/angular-gauge?type=dev)
