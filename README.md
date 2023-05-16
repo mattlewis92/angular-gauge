@@ -1,12 +1,12 @@
 # angular gauge
 
-[![Build Status](https://travis-ci.org/mattlewis92/angular-gauge.svg?branch=master)](https://travis-ci.org/mattlewis92/angular-gauge)
-[![codecov](https://codecov.io/gh/mattlewis92/angular-gauge/branch/master/graph/badge.svg)](https://codecov.io/gh/mattlewis92/angular-gauge)
+[![Build Status](https://travis-ci.org/mattlewis92/angular-gauge.svg?branch=main)](https://travis-ci.org/mattlewis92/angular-gauge)
+[![codecov](https://codecov.io/gh/mattlewis92/angular-gauge/branch/main/graph/badge.svg)](https://codecov.io/gh/mattlewis92/angular-gauge)
 [![npm version](https://badge.fury.io/js/angular-gauge.svg)](http://badge.fury.io/js/angular-gauge)
 [![devDependency Status](https://david-dm.org/mattlewis92/angular-gauge/dev-status.svg)](https://david-dm.org/mattlewis92/angular-gauge?type=dev)
 [![GitHub issues](https://img.shields.io/github/issues/mattlewis92/angular-gauge.svg)](https://github.com/mattlewis92/angular-gauge/issues)
 [![GitHub stars](https://img.shields.io/github/stars/mattlewis92/angular-gauge.svg)](https://github.com/mattlewis92/angular-gauge/stargazers)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/mattlewis92/angular-gauge/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/mattlewis92/angular-gauge/main/LICENSE)
 
 ## Demo
 
@@ -101,7 +101,7 @@ import { Component } from '@angular/core';
 export class MyComponent {}
 ```
 
-You may also find it useful to view the [demo source](https://github.com/mattlewis92/angular-gauge/blob/master/demo/demo.component.ts).
+You may also find it useful to view the [demo source](https://github.com/mattlewis92/angular-gauge/blob/main/demo/demo.component.ts).
 
 This lib is just a tiny wrapper over the excellent [svg-gauge](https://github.com/naikus/svg-gauge) library.
 
